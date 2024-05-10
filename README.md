@@ -1,6 +1,7 @@
 - 👋 Hi, I’m @vrxmike
 - 👀 I’m interested in software engineering
 - 🌱 I’m currently learning c programming
+- I'm interested in pen Testing, Cyber-Security and Artificial Intelligence
 - 💞️ I’m looking to collaborate on c and python
 
 ## #30NitesOfCode:
