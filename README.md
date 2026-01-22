@@ -9,13 +9,13 @@ Building scalable, secure full applications — from low-level foundations to cl
 - Fullstack-capable with strong backend focus
 - **Low-level mastery**: C (data structures, memory management, systems programming from ALX Foundations)
 - **Backend expertise**: Python (FastAPI/Flask), Node.js/Express, REST/GraphQL APIs, auth (JWT/OAuth), databases & scaling
-- **Frontend foundations**: HTML/CSS/JS for complete app flows and pairing with specialists
+- **Frontend foundations**: React/Next.js •HTML/CSS/JS for complete app flows and pairing with specialists
 - Passionate about secure, cloud-native development — blending backend with **cloud infrastructure** and **cybersecurity** best practices
 
 ### 🔧 Tech Stack
 - **Languages** — Python • JavaScript/TypeScript • C
 - **Backend** — FastAPI • Flask • Express • API design, security & performance
-- **Frontend basics** — HTML/CSS/JS (fullstack integration)
+- **Frontend basics** — React/Next.js • HTML/CSS/JS (fullstack integration)
 - **Databases** — MySQL • PostgreSQL • Redis • NoSQL concepts
 - **Cloud & Security** — Google Cloud Platform (GCP) tools/infrastructure • Cybersecurity fundamentals (offensive/defensive, pentesting concepts, tools like Metasploit/Wireshark)
 - **Dev Tools** — Git • Linux/shell • Docker basics • Testing (unittest/pytest)
