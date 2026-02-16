@@ -1,7 +1,7 @@
 # Hey, I'm Alvin Mike 👋  |  @vrxmike
 
 **Fullstack Software Engineer** (Backend-Specialized)  
-**ALX Africa Software Engineering Graduate** (12-month Programme, 70+ hrs/week)  
+**ALX Africa Software Engineering Graduate** (13-month Programme, 70+ hrs/week)  
 **Certified** with **Backend Specialization** completed 🎓  
 Building scalable, secure full applications — from low-level foundations to cloud-deployed, cyber-hardened backends.
 
