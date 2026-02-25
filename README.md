@@ -22,7 +22,7 @@ Building scalable, secure full applications — from low-level foundations to cl
 - **Next level** — Go/Rust for perf, full DevSecOps, advanced GCP/AWS
 
 ### 🏆 Key Milestones
-- Completed full ALX Foundations → Backend Specialization → 12-month Software Engineering Programme
+- Completed full ALX Foundations → Backend Specialization → 13-month Software Engineering Programme
 - Received official **ALX Software Engineering Certificate** (Backend focus)
 - Hands-on ALX projects/capstones: storage engines, auth systems, scalable services
 - Built & iterated on **private labs/projects** (API-driven apps, secure backends, integrated flows — some open-sourcing soon)
