@@ -1,82 +1,83 @@
-# Hey, I'm Alvin Mike 👋  |  @vrxmike
+# Hey, I'm Alvin Mike 👋 | @vrxmike
 
-**Fullstack Software Engineer** (Backend-Specialized)  
-**ALX Africa Software Engineering Graduate** (13-month Programme, 70+ hrs/week)  
-**Certified** with **Backend Specialization** completed 🎓  
-Building scalable, secure full applications — from low-level foundations to cloud-deployed, cyber-hardened backends.
+**Fullstack Software Engineer (Backend-Specialized) | DevSecOps | AI Systems**
+
+Building scalable, secure, cloud-native applications — from low-level systems to cyber-hardened backends and production platforms.
 
 ### 🌱 About Me
-- Fullstack-capable with strong backend focus
-- **Low-level mastery**: C (data structures, memory management, systems programming from ALX Foundations)
-- **Backend expertise**: Python (FastAPI/Flask), Node.js/Express, REST/GraphQL APIs, auth (JWT/OAuth), databases & scaling
-- **Frontend foundations**: React/Next.js •HTML/CSS/JS for complete app flows and pairing with specialists
-- Passionate about secure, cloud-native development — blending backend with **cloud infrastructure** and **cybersecurity** best practices
+- **Full-Spectrum Engineer** with deep backend expertise, building everything from resilient REST/GraphQL APIs (Python/Node) to cyber-hardened cloud infrastructure and end-to-end systems.
+- **Low-level foundations**: C, data structures, memory management & systems programming.
+- **Cloud & Security**: Passionate about designing secure architectures, leveraging GCP infrastructure, and applying offensive/defensive cybersecurity practices.
+- **Modern integration**: Connecting powerful backends with clean React/Next.js frontends, Tailwind styling, and interactive glassmorphic UIs.
 
 ### 🔧 Tech Stack
-- **Languages** — Python • JavaScript/TypeScript • C
-- **Backend** — FastAPI • Flask • Express • API design, security & performance
-- **Frontend basics** — React/Next.js • HTML/CSS/JS (fullstack integration)
-- **Databases** — MySQL • PostgreSQL • Redis • NoSQL concepts
-- **Cloud & AI** — Google Cloud Platform (GCP) • Compute Engine • Cloud Load Balancing • Generative AI (Gemini, Vertex AI)
-- **Security** — Cybersecurity fundamentals (offensive/defensive, pentesting concepts, tools like Metasploit/Wireshark)
-- **Dev Tools** — Git • Linux/shell • Docker basics • Testing (unittest/pytest)
-- **Next level** — Go/Rust for perf, full DevSecOps, advanced GCP/AWS
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![C](https://img.shields.io/badge/C-A8B9CC?logo=c&logoColor=black)
 
-### 🏆 Key Milestones
-- Completed full ALX Foundations → Backend Specialization → 13-month Software Engineering Programme
-- Received official **ALX Software Engineering Certificate** (Backend focus)
-- Hands-on ALX projects/capstones: storage engines, auth systems, scalable services
-- Built & iterated on **private labs/projects** (API-driven apps, secure backends, integrated flows — some open-sourcing soon)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?logo=nodedotjs&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black)
+![Next.js](https://img.shields.io/badge/Next.js-000000?logo=nextdotjs&logoColor=white)
 
-### 🏅 Certifications & Badges
-- **Google Cloud Platform (GCP) Verified Skills:**
-  <br/>
-  <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 15px; justify-content: flex-start; align-items: stretch;">
-    <div style="border: 1px solid #eaeaea; border-radius: 12px; padding: 10px; background-color: #f8f9fa; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-      <a href="https://www.credly.com/badges/87703a7a-94d9-4ba0-8586-2e8a1350e152/public_url" target="_blank">
-        <img src="https://images.credly.com/images/1dbef1bd-cdb0-40e1-bff4-8200448c3161/linkedin_thumb_blob" alt="Develop GenAI Apps with Gemini and Streamlit Skill Badge" width="180" />
-      </a>
-    </div>
-    <div style="border: 1px solid #eaeaea; border-radius: 12px; padding: 10px; background-color: #f8f9fa; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-      <a href="https://www.credly.com/badges/e66b66dd-e747-424b-b022-62f2db28eb89/public_url" target="_blank">
-        <img src="https://images.credly.com/images/eea11cba-2a98-4bbe-bad2-447878dd34a2/linkedin_thumb_image.png" alt="Implement Load Balancing on Compute Engine Skill Badge" width="180" />
-      </a>
-    </div>
-    <div style="border: 1px solid #eaeaea; border-radius: 12px; padding: 10px; background-color: #f8f9fa; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-      <a href="https://www.credly.com/badges/32b54f0b-ba99-4655-b40a-15d3d7883d69/public_url" target="_blank">
-        <img src="https://images.credly.com/images/68756311-9319-4eeb-a2b7-76defc8dd8a2/linkedin_thumb_image.png" alt="Prepare Data for ML APIs on Google Cloud Skill Badge" width="180" />
-      </a>
-    </div>
-    <div style="border: 1px solid #eaeaea; border-radius: 12px; padding: 10px; background-color: #f8f9fa; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-      <a href="https://www.credly.com/badges/7d83a617-ba0b-4e45-9b8a-a70ceef6f4c3/public_url" target="_blank">
-        <img src="https://images.credly.com/images/cef82b2e-970a-4318-8e59-c3e26b7f5c19/linkedin_thumb_image.png" alt="Prompt Design in Vertex AI Skill Badge" width="180" />
-      </a>
-    </div>
-    <div style="border: 1px solid #eaeaea; border-radius: 12px; padding: 10px; background-color: #f8f9fa; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-      <a href="https://www.credly.com/badges/5fe1a562-e4c2-4ab2-95e8-71c96bbf0132/public_url" target="_blank">
-        <img src="https://images.credly.com/images/42326d44-14ff-4eda-b9c5-7d8f12919253/linkedin_thumb_image.png" alt="Set Up an App Dev Environment on Google Cloud Skill Badge" width="180" />
-      </a>
-    </div>
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?logo=redis&logoColor=white)
+![Appwrite](https://img.shields.io/badge/Appwrite-F02E65?logo=appwrite&logoColor=white)
+
+![Google Cloud](https://img.shields.io/badge/Google_Cloud-4285F4?logo=googlecloud&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?logo=github-actions&logoColor=white)
+
+### 🏆 Certifications & Milestones
+![ALX Cybersecurity](https://img.shields.io/badge/ALX_Cybersecurity-000000?logo=alxafrica&logoColor=white&style=flat)
+![ALX Software Engineering](https://img.shields.io/badge/ALX_SE-000000?logo=alxafrica&logoColor=white)
+![Google Cloud](https://img.shields.io/badge/Google_Cloud-4285F4?logo=googlecloud&logoColor=white)
+![10x1000 AI](https://img.shields.io/badge/10x1000_AI-00A3E0?logo=antgroup&logoColor=white)
+
+- 🛡️ **ALX Cybersecurity** — Completed April 2026
+- 💼 **ALX Professional Foundations** — Completed December 2025
+- 🚀 **ALX Ventures Founder Academy** — Completed August 2024
+- 🤖 **10x1000 Tech for Inclusion: AI Miniseries** (IFC & Ant Group) — Completed July 2024
+- 💻 **ALX Software Engineering – Backend Specialization** — Completed June 2024
+- 📈 **10x1000 Tech for Inclusion: Fintech Foundation** (IFC & Ant Group) — Completed December 2023
+
+- ☁️ **Google Cloud Platform (GCP) Verified Skills** (5+ badges covering Generative AI, Vertex AI, Compute Engine, and Data Pipelines)
+
+  <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 10px;">
+    <a href="https://www.credly.com/badges/87703a7a-94d9-4ba0-8586-2e8a1350e152/public_url" target="_blank">
+      <img src="https://images.credly.com/images/1dbef1bd-cdb0-40e1-bff4-8200448c3161/linkedin_thumb_blob" alt="Develop GenAI Apps with Gemini and Streamlit" width="160" />
+    </a>
+    <a href="https://www.credly.com/badges/e66b66dd-e747-424b-b022-62f2db28eb89/public_url" target="_blank">
+      <img src="https://images.credly.com/images/eea11cba-2a98-4bbe-bad2-447878dd34a2/linkedin_thumb_image.png" alt="Implement Load Balancing on Compute Engine" width="160" />
+    </a>
+    <a href="https://www.credly.com/badges/32b54f0b-ba99-4655-b40a-15d3d7883d69/public_url" target="_blank">
+      <img src="https://images.credly.com/images/68756311-9319-4eeb-a2b7-76defc8dd8a2/linkedin_thumb_image.png" alt="Prepare Data for ML APIs on Google Cloud" width="160" />
+    </a>
+    <a href="https://www.credly.com/badges/7d83a617-ba0b-4e45-9b8a-a70ceef6f4c3/public_url" target="_blank">
+      <img src="https://images.credly.com/images/cef82b2e-970a-4318-8e59-c3e26b7f5c19/linkedin_thumb_image.png" alt="Prompt Design in Vertex AI" width="160" />
+    </a>
+    <a href="https://www.credly.com/badges/5fe1a562-e4c2-4ab2-95e8-71c96bbf0132/public_url" target="_blank">
+      <img src="https://images.credly.com/images/42326d44-14ff-4eda-b9c5-7d8f12919253/linkedin_thumb_image.png" alt="Set Up an App Dev Environment on Google Cloud" width="160" />
+    </a>
   </div>
 
-### 🚀 Currently Leveling Up
-- **ALX Google Cloud Skills Programme** (Earned 5+ badges covering Generative AI, Vertex AI, Compute Engine, and Data Pipelines)
-- **ALX Cybersecurity Programme** (7-month track — offensive/defensive security, GRC, tools like Metasploit, Wireshark; hardening backends against real threats)
+### 🚀 Currently Leveling Up & Building
+- **BlessedHands** — A luxury, WebGPU-powered AR beauty platform offering hyper-realistic virtual styling and premium appointment booking.
+- **BytesFang** — AI-powered automated job and gig scraping pipeline.
+- **iProperties** — Modern real estate investment platform featuring glassmorphic UI and robust backend services.
 
 ### 💞️ Open to Collaborate / Work With
-- Fullstack/backend projects (Python/Node, cloud-integrated)
-- Secure API/services, pentest-aware apps, cloud deployments
-- Open-source in security tooling, AI backends, cloud/dev tools
-- **Job opps** — fullstack/backend/devsecops roles, freelance, startups (Nairobi/remote/global)
+- Fullstack & backend projects (Python/Node + cloud)
+- Secure APIs, pentest-aware apps, cloud deployments
+- Open-source in security tooling, AI backends, or DevSecOps
+- Job opportunities — Fullstack / Backend / DevSecOps (Nairobi / Remote / Global)
 
-### Featured Repos (check pinned)
-- `alx-backend` → Core backend implementations
-- `alx-backend-storage` → Databases & engines
-- `alx-backend-javascript` → Node/JS services
-- Personal/private labs (cloud + security experiments coming public)
+---
 
-Hit me up: **alvinvrxmike@icloud.com**  
-X: @vrxmike / @bytesfang  
-Let's build secure, scalable stuff in the cloud 🔥
+**Hit me up**: alvinvrxmike@icloud.com  
+**X**: [@vrxmike](https://x.com/vrxmike) | [@bytesfang](https://x.com/bytesfang)
 
-#ALX #Fullstack #Backend #GoogleCloud #Cybersecurity #Python #SoftwareEngineering #Certified
+*Let's build secure, scalable solutions in the cloud 🔥*
