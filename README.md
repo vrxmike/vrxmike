@@ -5,7 +5,7 @@
 Building scalable, secure, cloud-native applications — from low-level systems to cyber-hardened backends and production platforms.
 
 ### 🌱 About Me
-- **Full-Spectrum Systems Engineer:** Architects resilient REST and GraphQL backend APIs using FastAPI and Node.js, engineered for high availability, security, and performance. Designs and deploys high-traffic infrastructure leveraging Nginx, Gunicorn, and Load Balancers; ensuring robust traffic management, efficient resource utilization, and system reliability at scale.
+- **Full-Spectrum Systems Engineer:** Architecting resilient REST and GraphQL backend APIs using FastAPI and Node.js, engineered for high availability, security, and performance. Designing and deploying high-traffic infrastructure leveraging Nginx, Gunicorn, and Load Balancers, ensuring robust traffic management, efficient resource utilization, and system reliability at scale.
 - **Low-level & Unix Foundations:** Advanced skills in C, memory management, and Linux systems, strengthened by Bash/Shell scripting and expert version control (Git, Vim, Emacs).
 - **Reliability & System Design:** Engineering scalable Python services with strong OOP, SQLAlchemy ORM, TDD, and comprehensive unit/integration testing.
 - **DevSecOps & Cloud Security:** Building cyber-hardened GCP environments, automating secure CI/CD pipelines (GitHub Actions, Docker), managing configs with Puppet, and implementing SSL/TLS best practices.
