@@ -65,9 +65,12 @@ Building scalable, secure, cloud-native applications — from low-level systems 
   </div>
 
 ### 🚀 Currently Leveling Up & Building
-- **BlessedHands** — A luxury, WebGPU-powered AR beauty platform offering hyper-realistic virtual styling and premium appointment booking.
+- **[BlessedHands](https://blessedhands-beta.appwrite.network/)** — A luxury, WebGPU-powered AR beauty platform offering hyper-realistic virtual styling and premium appointment booking.
+    - 🌐 **[Live Beta Preview](https://blessedhands-beta.appwrite.network/)** | 🧪 *Refining MediaPipe AR & 3D WebGPU logic.*
 - **BytesFang** — AI-powered automated job and gig scraping pipeline.
+    - 🔒 *Proprietary Engine — Private Repository.*
 - **iProperties** — Modern real estate investment platform featuring glassmorphic UI and robust backend services.
+    - 🏗️ *Architecting secure Appwrite backend modules.*
 
 ### 💞️ Open to Collaborate / Work With
 - Fullstack & backend projects (Python/Node + cloud)
@@ -77,7 +80,7 @@ Building scalable, secure, cloud-native applications — from low-level systems 
 
 ---
 
-**Hit me up**: alvinvrxmike@icloud.com  
+**Hit me up**: [alvinvrxmike@icloud.com](mailto:alvinvrxmike@icloud.com)  
 **X**: [@vrxmike](https://x.com/vrxmike) | [@bytesfang](https://x.com/bytesfang)
 
 *Let's build secure, scalable solutions in the cloud 🔥*
