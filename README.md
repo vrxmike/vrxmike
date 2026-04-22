@@ -81,6 +81,6 @@ Building scalable, secure, cloud-native applications — from low-level systems 
 ---
 
 **Hit me up**: [alvinvrxmike@icloud.com](mailto:alvinvrxmike@icloud.com)  
-**X**: [@vrxmike](https://x.com/vrxmike) | [@bytesfang](https://x.com/bytesfang)
+**X**: [@bytesfang](https://x.com/bytesfang)
 
 *Let's build secure, scalable solutions in the cloud 🔥*
