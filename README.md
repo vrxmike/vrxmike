@@ -5,21 +5,37 @@
 Building scalable, secure, cloud-native applications — from low-level systems to cyber-hardened backends and production platforms.
 
 ### 🌱 About Me
-- **Full-Spectrum Engineer** with deep backend expertise, building everything from resilient REST/GraphQL APIs (Python/Node) to cyber-hardened cloud infrastructure and end-to-end systems.
-- **Low-level foundations**: C, data structures, memory management & systems programming.
-- **Cloud & Security**: Passionate about designing secure architectures, leveraging GCP infrastructure, and applying offensive/defensive cybersecurity practices.
-- **Modern integration**: Connecting powerful backends with clean React/Next.js frontends, Tailwind styling, and interactive glassmorphic UIs.
+- **Full-Spectrum Systems Engineer:** Architects resilient REST and GraphQL backend APIs using FastAPI and Node.js, engineered for high availability, security, and performance. Designs and deploys high-traffic infrastructure leveraging Nginx, Gunicorn, and Load Balancers; ensuring robust traffic management, efficient resource utilization, and system reliability at scale.
+- **Low-level & Unix Foundations:** Advanced skills in C, memory management, and Linux systems, strengthened by Bash/Shell scripting and expert version control (Git, Vim, Emacs).
+- **Reliability & System Design:** Engineering scalable Python services with strong OOP, SQLAlchemy ORM, TDD, and comprehensive unit/integration testing.
+- **DevSecOps & Cloud Security:** Building cyber-hardened GCP environments, automating secure CI/CD pipelines (GitHub Actions, Docker), managing configs with Puppet, and implementing SSL/TLS best practices.
+- **Modern UI/UX Integration:** Integrating robust backends with elegant, responsive React/Next.js frontends and glassmorphic UIs, plus WebGPU-powered AR.
 
 ### 🔧 Tech Stack
+
 ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
+![C](https://img.shields.io/badge/C-A8B9CC?logo=c&logoColor=black)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
-![C](https://img.shields.io/badge/C-A8B9CC?logo=c&logoColor=black)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
+![Bash](https://img.shields.io/badge/Bash-4EAA25?logo=gnubash&logoColor=white)
 
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?logo=nodedotjs&logoColor=white)
 ![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black)
 ![Next.js](https://img.shields.io/badge/Next.js-000000?logo=nextdotjs&logoColor=white)
+![JQuery](https://img.shields.io/badge/jQuery-0769AD?logo=jquery&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?logo=flask&logoColor=white)
+![Jinja2](https://img.shields.io/badge/Jinja2-B41717?logo=jinja&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwindcss&logoColor=white)
+
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
+![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-D71F00?logo=sqlalchemy&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?logo=nodedotjs&logoColor=white)
+![Nginx](https://img.shields.io/badge/Nginx-009639?logo=nginx&logoColor=white)
+![Gunicorn](https://img.shields.io/badge/Gunicorn-499848?logo=gunicorn&logoColor=white)
+![Puppet](https://img.shields.io/badge/Puppet-FFAE1A?logo=puppet&logoColor=black)
+![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?logo=github-actions&logoColor=white)
 
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white)
@@ -28,8 +44,21 @@ Building scalable, secure, cloud-native applications — from low-level systems 
 ![Appwrite](https://img.shields.io/badge/Appwrite-F02E65?logo=appwrite&logoColor=white)
 
 ![Google Cloud](https://img.shields.io/badge/Google_Cloud-4285F4?logo=googlecloud&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?logo=github-actions&logoColor=white)
+![SSH](https://img.shields.io/badge/SSH-000000?logo=gnubash&logoColor=white)
+![SSL/TLS](https://img.shields.io/badge/SSL/TLS-008080?logo=letsencrypt&logoColor=white)
+![TCP/IP](https://img.shields.io/badge/TCP/IP-003545?logo=cisco&logoColor=white)
+
+![Unit Testing](https://img.shields.io/badge/Testing-Pytest%20%7C%20Unittest%20%7C%20Jest-6E4C13?logo=pytest&logoColor=white)
+![Test Driven Development](https://img.shields.io/badge/TDD-21BA45?logo=testinglibrary&logoColor=white)
+![CI/CD](https://img.shields.io/badge/CI/CD-2088FF?logo=github-actions&logoColor=white)
+
+![YAML](https://img.shields.io/badge/YAML-CEDB5C?logo=yaml&logoColor=black)
+![JSON](https://img.shields.io/badge/JSON-000000?logo=json&logoColor=white)
+
+![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black)
+![Git](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white)
+![Vim](https://img.shields.io/badge/Vim-019733?logo=vim&logoColor=white)
+![Emacs](https://img.shields.io/badge/Emacs-7F5AB6?logo=gnu&logoColor=white)
 
 ### 🏆 Certifications & Milestones
 ![ALX Cybersecurity](https://img.shields.io/badge/ALX_Cybersecurity-000000?logo=alxafrica&logoColor=white&style=flat)
@@ -81,6 +110,6 @@ Building scalable, secure, cloud-native applications — from low-level systems 
 ---
 
 **Hit me up**: [alvinvrxmike@icloud.com](mailto:alvinvrxmike@icloud.com)  
-**X**: [@vrxmike](https://x.com/vrxmike) | [@bytesfang](https://x.com/bytesfang)
+**X**: [@bytesfang](https://x.com/bytesfang)
 
 *Let's build secure, scalable solutions in the cloud 🔥*
