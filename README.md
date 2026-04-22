@@ -6,7 +6,8 @@ Building scalable, secure, cloud-native applications — from low-level systems 
 
 ### 🌱 About Me
 - **Full-Spectrum Engineer** with deep backend expertise, building everything from resilient REST/GraphQL APIs (Python/Node) to cyber-hardened cloud infrastructure and end-to-end systems.
-- **Low-level foundations**: C, data structures, memory management & systems programming.
+- **Low-level foundations**: C, data structures, memory management, and systems programming.
+- **Higher-level programming**: Advanced Python and Object-Oriented Programming (OOP) for architecting scalable logic, algorithmic efficiency, and data-driven backend services.
 - **Cloud & Security**: Passionate about designing secure architectures, leveraging GCP infrastructure, and applying offensive/defensive cybersecurity practices.
 - **Modern integration**: Connecting powerful backends with clean React/Next.js frontends, Tailwind styling, and interactive glassmorphic UIs.
 
