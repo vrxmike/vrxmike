@@ -124,3 +124,4 @@ Building scalable, secure, cloud-native applications — from low-level systems 
 **X**: [@bytesfang](https://x.com/bytesfang)
 
 *Let's build secure, scalable solutions in the cloud 🔥*
+[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=anuraghazra)](https://github.com/anuraghazra/github-readme-stats)
