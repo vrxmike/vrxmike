@@ -104,6 +104,11 @@ Building scalable, secure, cloud-native applications — from low-level systems 
     </a>
   </div>
 
+
+### 📊 GitHub Activity & Statistics
+<!-- START_STATS -->
+<!-- END_STATS -->
+
 ### 🚀 Currently Leveling Up & Building
 - **[BlessedHands](https://blessedhands-beta.appwrite.network/)** — A luxury, WebGPU-powered AR beauty platform offering hyper-realistic virtual styling and premium appointment booking.
     - 🌐 **[Live Beta Preview](https://blessedhands-beta.appwrite.network/)** | 🧪 *Refining MediaPipe AR & 3D WebGPU logic.*
