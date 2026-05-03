@@ -27,7 +27,8 @@ jobs:
 
       - name: Fetch and Inject Stats
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Use a Personal Access Token (GH_PAT) if available to fetch private stats, otherwise fallback to GITHUB_TOKEN
+          GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
         run: python sync_stats.py
 
       - name: Commit and Push Changes

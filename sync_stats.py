@@ -70,6 +70,7 @@ def fetch_graphql_data(username: str) -> dict:
           totalCommitContributions
           totalPullRequestContributions
           totalIssueContributions
+          restrictedContributionsCount
         }
         recentRepos: repositories(first: 1, orderBy: {field: PUSHED_AT, direction: DESC}, ownerAffiliations: OWNER) {
           nodes {
@@ -130,6 +131,8 @@ def process_stats(data: dict) -> dict:
     # Contributions metrics
     contribs = data.get("contributionsCollection", {})
     total_commits = contribs.get("totalCommitContributions", 0)
+    restricted_contribs = contribs.get("restrictedContributionsCount", 0)
+    total_commits += restricted_contribs # Include private contributions
     total_prs = contribs.get("totalPullRequestContributions", 0)
     total_issues = contribs.get("totalIssueContributions", 0)
 
