@@ -107,6 +107,25 @@ Building scalable, secure, cloud-native applications — from low-level systems 
 
 ### 📊 GitHub Activity & Statistics
 <!-- START_STATS -->
+| Metric | Count |
+| :--- | :--- |
+| 📚 Total Repositories | 60 |
+| ⭐ Total Stars | 20 |
+| 🍴 Total Forks | 1 |
+| 💻 Commits (Last 365 Days) | 2091 |
+| 🔄 Pull Requests (Last 365 Days) | 17 |
+| 🐛 Issues Created (Last 365 Days) | 4 |
+
+### 🏆 Top Languages
+```text
+Jupyter Notebook ████████████████░░░░  84.45%
+Python       ██░░░░░░░░░░░░░░░░░░  11.53%
+TypeScript   ░░░░░░░░░░░░░░░░░░░░   1.13%
+JavaScript   ░░░░░░░░░░░░░░░░░░░░   0.96%
+HTML         ░░░░░░░░░░░░░░░░░░░░   0.83%
+```
+
+*(Last updated: May 03, 2026)*
 <!-- END_STATS -->
 
 ### 🚀 Currently Leveling Up & Building
