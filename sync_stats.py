@@ -38,7 +38,7 @@ def get_session():
     return session
 
 def fetch_graphql_data(username: str) -> dict:
-    """Fetch user metrics from GitHub via GraphQL API."""
+    """Fetch user metrics from GitHub via GraphQL API, with pagination for repositories."""
     if not GITHUB_TOKEN:
         logger.error("GITHUB_TOKEN environment variable is missing.")
         sys.exit(1)
@@ -48,11 +48,16 @@ def fetch_graphql_data(username: str) -> dict:
         "Content-Type": "application/json"
     }
 
-    query = """
-    query($login: String!, $from: DateTime!) {
+    # First query to get user-level stats and the first page of repos
+    user_query = """
+    query($login: String!, $from: DateTime!, $cursor: String) {
       user(login: $login) {
-        repositories(first: 100, ownerAffiliations: OWNER, orderBy: {field: STARGAZERS, direction: DESC}) {
+        repositories(first: 100, after: $cursor, ownerAffiliations: OWNER, orderBy: {field: STARGAZERS, direction: DESC}) {
           totalCount
+          pageInfo {
+            hasNextPage
+            endCursor
+          }
           nodes {
             stargazerCount
             forkCount
@@ -81,21 +86,48 @@ def fetch_graphql_data(username: str) -> dict:
     }
     """
 
-    # Calculate date 365 days ago
-    from_date = (datetime.datetime.now(timezone.utc) - timedelta(days=365)).strftime("%Y-%m-%dT%H:%M:%SZ")
-
-    variables = {
-        "login": username,
-        "from": from_date
+    # Separate query for paginating through the remaining repos only
+    repo_pagination_query = """
+    query($login: String!, $cursor: String) {
+      user(login: $login) {
+        repositories(first: 100, after: $cursor, ownerAffiliations: OWNER, orderBy: {field: STARGAZERS, direction: DESC}) {
+          pageInfo {
+            hasNextPage
+            endCursor
+          }
+          nodes {
+            stargazerCount
+            forkCount
+            languages(first: 10, orderBy: {field: SIZE, direction: DESC}) {
+              edges {
+                size
+                node {
+                  name
+                }
+              }
+            }
+          }
+        }
+      }
     }
+    """
+
+    from_date = (datetime.datetime.now(timezone.utc) - timedelta(days=365)).strftime("%Y-%m-%dT%H:%M:%SZ")
 
     logger.info(f"Fetching GraphQL data for user: {username}")
     session = get_session()
 
+    # --- Fetch First Page & Core Stats ---
+    variables = {
+        "login": username,
+        "from": from_date,
+        "cursor": None
+    }
+
     try:
         response = session.post(
             GRAPHQL_ENDPOINT,
-            json={"query": query, "variables": variables},
+            json={"query": user_query, "variables": variables},
             headers=headers,
             timeout=15
         )
@@ -111,10 +143,48 @@ def fetch_graphql_data(username: str) -> dict:
             logger.error(f"User {username} not found or no access.")
             sys.exit(1)
 
-        return user_data
     except requests.exceptions.RequestException as e:
         logger.error(f"Request failed: {e}")
         sys.exit(1)
+
+    # --- Handle Pagination for Repositories ---
+    has_next_page = user_data["repositories"]["pageInfo"]["hasNextPage"]
+    end_cursor = user_data["repositories"]["pageInfo"]["endCursor"]
+
+    while has_next_page:
+        logger.info(f"Paginating repositories, fetching after: {end_cursor}")
+        variables = {
+            "login": username,
+            "cursor": end_cursor
+        }
+
+        try:
+            response = session.post(
+                GRAPHQL_ENDPOINT,
+                json={"query": repo_pagination_query, "variables": variables},
+                headers=headers,
+                timeout=15
+            )
+            response.raise_for_status()
+            page_data = response.json()
+
+            if "errors" in page_data:
+                logger.error(f"GraphQL pagination errors: {json.dumps(page_data['errors'])}")
+                break
+
+            repo_data = page_data.get("data", {}).get("user", {}).get("repositories", {})
+
+            # Extend the nodes
+            user_data["repositories"]["nodes"].extend(repo_data.get("nodes", []))
+
+            has_next_page = repo_data.get("pageInfo", {}).get("hasNextPage", False)
+            end_cursor = repo_data.get("pageInfo", {}).get("endCursor")
+
+        except requests.exceptions.RequestException as e:
+            logger.error(f"Pagination request failed: {e}")
+            break
+
+    return user_data
 
 def process_stats(data: dict) -> dict:
     """Process GraphQL payload into concise statistics."""
@@ -124,7 +194,8 @@ def process_stats(data: dict) -> dict:
     repo_nodes = repos.get("nodes", [])
 
     # Core repo metrics
-    total_repos = repos.get("totalCount", 0)
+    # Use len(repo_nodes) to ensure we count all paginated public and private repos returned
+    total_repos = max(repos.get("totalCount", 0), len(repo_nodes))
     total_stars = sum(r.get("stargazerCount", 0) for r in repo_nodes)
     total_forks = sum(r.get("forkCount", 0) for r in repo_nodes)
 
@@ -190,7 +261,7 @@ def render_markdown(stats: dict) -> str:
     # Core stats table
     lines.append("| Metric | Count |")
     lines.append("| :--- | :--- |")
-    lines.append(f"| 📚 Public Repositories | {stats['total_repos']} |")
+    lines.append(f"| 📚 Total Repositories | {stats['total_repos']} |")
     lines.append(f"| ⭐ Total Stars | {stats['total_stars']} |")
     lines.append(f"| 🍴 Total Forks | {stats['total_forks']} |")
     lines.append(f"| 💻 Commits (Last 365 Days) | {stats['total_commits']} |")
@@ -223,13 +294,14 @@ def inject_readme(content: str) -> None:
         with open(README_PATH, "r", encoding="utf-8") as f:
             readme_text = f.read()
 
-        pattern = re.compile(r"(<!-- START_STATS -->\n).*?(\n<!-- END_STATS -->)", re.DOTALL)
+        pattern = re.compile(r"(<!-- START_STATS -->).*?(<!-- END_STATS -->)", re.DOTALL)
 
         if not pattern.search(readme_text):
             logger.error("Could not find <!-- START_STATS --> and <!-- END_STATS --> markers in README.md")
             sys.exit(1)
 
-        new_readme = pattern.sub(rf"\g<1>{content}\g<2>", readme_text)
+        # Safely inject with lambda instead of rf-strings
+        new_readme = pattern.sub(lambda m: f"{m.group(1)}\n{content}{m.group(2)}", readme_text)
 
         with open(README_PATH, "w", encoding="utf-8") as f:
             f.write(new_readme)

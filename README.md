@@ -107,6 +107,7 @@ Building scalable, secure, cloud-native applications — from low-level systems 
 
 ### 📊 GitHub Activity & Statistics
 <!-- START_STATS -->
+
 <!-- END_STATS -->
 
 ### 🚀 Currently Leveling Up & Building
