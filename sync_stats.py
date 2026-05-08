@@ -52,7 +52,10 @@ def fetch_graphql_data(username: str) -> dict:
     user_query = """
     query($login: String!, $from: DateTime!, $cursor: String) {
       user(login: $login) {
-        repositories(first: 100, after: $cursor, ownerAffiliations: OWNER, orderBy: {field: STARGAZERS, direction: DESC}) {
+        pullRequests(first: 1) { totalCount }
+        issues(first: 1) { totalCount }
+        starredRepositories { totalCount }
+        repositories(first: 100, after: $cursor, ownerAffiliations: [OWNER, COLLABORATOR, ORGANIZATION_MEMBER], orderBy: {field: STARGAZERS, direction: DESC}) {
           totalCount
           pageInfo {
             hasNextPage
@@ -90,7 +93,7 @@ def fetch_graphql_data(username: str) -> dict:
     repo_pagination_query = """
     query($login: String!, $cursor: String) {
       user(login: $login) {
-        repositories(first: 100, after: $cursor, ownerAffiliations: OWNER, orderBy: {field: STARGAZERS, direction: DESC}) {
+        repositories(first: 100, after: $cursor, ownerAffiliations: [OWNER, COLLABORATOR, ORGANIZATION_MEMBER], orderBy: {field: STARGAZERS, direction: DESC}) {
           pageInfo {
             hasNextPage
             endCursor
@@ -204,8 +207,11 @@ def process_stats(data: dict) -> dict:
     total_commits = contribs.get("totalCommitContributions", 0)
     restricted_contribs = contribs.get("restrictedContributionsCount", 0)
     total_commits += restricted_contribs # Include private contributions
-    total_prs = contribs.get("totalPullRequestContributions", 0)
-    total_issues = contribs.get("totalIssueContributions", 0)
+
+    # Global metrics
+    total_prs = data.get("pullRequests", {}).get("totalCount", 0)
+    total_issues = data.get("issues", {}).get("totalCount", 0)
+    stars_given = data.get("starredRepositories", {}).get("totalCount", 0)
 
     # Language metrics
     language_sizes = {}
@@ -242,6 +248,7 @@ def process_stats(data: dict) -> dict:
         "total_commits": total_commits,
         "total_prs": total_prs,
         "total_issues": total_issues,
+        "stars_given": stars_given,
         "top_languages": top_languages,
         "last_updated": last_updated
     }
@@ -262,11 +269,12 @@ def render_markdown(stats: dict) -> str:
     lines.append("| Metric | Count |")
     lines.append("| :--- | :--- |")
     lines.append(f"| 📚 Total Repositories | {stats['total_repos']} |")
-    lines.append(f"| ⭐ Total Stars | {stats['total_stars']} |")
+    lines.append(f"| ⭐ Stars Earned | {stats['total_stars']} |")
+    lines.append(f"| 🌟 Stars Given | {stats['stars_given']} |")
     lines.append(f"| 🍴 Total Forks | {stats['total_forks']} |")
     lines.append(f"| 💻 Commits (Last 365 Days) | {stats['total_commits']} |")
-    lines.append(f"| 🔄 Pull Requests (Last 365 Days) | {stats['total_prs']} |")
-    lines.append(f"| 🐛 Issues Created (Last 365 Days) | {stats['total_issues']} |")
+    lines.append(f"| 🔄 Total Pull Requests | {stats['total_prs']} |")
+    lines.append(f"| 🐛 Total Issues | {stats['total_issues']} |")
     lines.append("")
 
     # Languages section
