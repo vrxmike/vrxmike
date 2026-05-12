@@ -112,22 +112,20 @@ Building scalable, secure, cloud-native applications — from low-level systems 
 | 📚 Total Repositories | 60 |
 | ⭐ Total Stars | 20 |
 | 🍴 Total Forks | 1 |
-| 💻 Total Commits | 2244 |
+| 💻 Total Commits | 2259 |
 | 🔄 Pull Requests | 18 |
 | 🐛 Issues Created | 4 |
 
 ### 🏆 Top Languages
 ```text
 Jupyter Notebook ████████████████░░░░  84.45%
-Python       ██░░░░░░░░░░░░░░░░░░  11.53%
+Python       ██░░░░░░░░░░░░░░░░░░  11.54%
 TypeScript   ░░░░░░░░░░░░░░░░░░░░   1.13%
 JavaScript   ░░░░░░░░░░░░░░░░░░░░   0.96%
 HTML         ░░░░░░░░░░░░░░░░░░░░   0.83%
 ```
 
-![Contribution Activity](./activity.svg)
-
-*(Last updated: May 11, 2026)*
+*(Last updated: May 12, 2026 (inc. private))*
 <!-- END_STATS -->
 
 ### 🛡️ Engineering Insights
