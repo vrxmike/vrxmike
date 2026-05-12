@@ -25,6 +25,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests
 
+      - name: Install Docker & jq
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker.io jq
+
       - name: Fetch and Inject Stats
         env:
           # Use a Personal Access Token (GH_PAT) if available to fetch private stats, otherwise fallback to GITHUB_TOKEN
@@ -32,7 +37,7 @@ jobs:
         run: python sync_stats.py
 
       - name: Generate Engineering Metrics
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@v3.34.0
         with:
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
           user: vrxmike
@@ -48,7 +53,6 @@ jobs:
           plugin_languages_details: bytes-size, percentage
           plugin_achievements: yes
           plugin_achievements_display: compact
-          config_theme: dark
           filename: github-metrics.svg
           output_action: none
           extras_css: |
