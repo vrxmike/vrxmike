@@ -37,7 +37,7 @@ jobs:
         run: python sync_stats.py
 
       - name: Generate Engineering Metrics
-        uses: lowlighter/metrics@v3.34.0
+        uses: lowlighter/metrics@v3.34
         with:
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
           user: vrxmike
