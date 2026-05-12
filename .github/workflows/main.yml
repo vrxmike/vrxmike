@@ -67,6 +67,16 @@ jobs:
       - name: Debug - List Files
         run: ls -R
 
+      - name: Move Metrics SVG
+        run: |
+          if [ -f /metrics_renders/github-metrics.svg ]; then
+            sudo mv /metrics_renders/github-metrics.svg ./github-metrics.svg
+          elif [ -f ./metrics_renders/github-metrics.svg ]; then
+            mv ./metrics_renders/github-metrics.svg ./github-metrics.svg
+          else
+            echo "Metrics SVG not found in expected locations."
+          fi
+
       - name: Commit and Push Changes
         run: |
           git config --global user.name 'github-actions[bot]'
