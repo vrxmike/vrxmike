@@ -112,9 +112,9 @@ Building scalable, secure, cloud-native applications — from low-level systems 
 | 📚 Total Repositories | 60 |
 | ⭐ Total Stars | 20 |
 | 🍴 Total Forks | 1 |
-| 💻 Commits (Last 365 Days) | 2244 |
-| 🔄 Pull Requests (Last 365 Days) | 18 |
-| 🐛 Issues Created (Last 365 Days) | 4 |
+| 💻 Total Commits | 2244 |
+| 🔄 Pull Requests | 18 |
+| 🐛 Issues Created | 4 |
 
 ### 🏆 Top Languages
 ```text
@@ -125,8 +125,13 @@ JavaScript   ░░░░░░░░░░░░░░░░░░░░   0.96
 HTML         ░░░░░░░░░░░░░░░░░░░░   0.83%
 ```
 
+![Contribution Activity](./activity.svg)
+
 *(Last updated: May 11, 2026)*
 <!-- END_STATS -->
+
+### 🛡️ Engineering Insights
+![Metrics](./github-metrics.svg)
 
 ### 🚀 Currently Leveling Up & Building
 - **[BlessedHands](https://blessedhands-beta.appwrite.network/)** — A luxury, WebGPU-powered AR beauty platform offering hyper-realistic virtual styling and premium appointment booking.

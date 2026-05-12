@@ -59,6 +59,7 @@ def fetch_graphql_data(username: str) -> dict:
             endCursor
           }
           nodes {
+            isPrivate
             stargazerCount
             forkCount
             languages(first: 10, orderBy: {field: SIZE, direction: DESC}) {
@@ -76,6 +77,16 @@ def fetch_graphql_data(username: str) -> dict:
           totalPullRequestContributions
           totalIssueContributions
           restrictedContributionsCount
+          contributionCalendar {
+            totalContributions
+            weeks {
+              contributionDays {
+                date
+                contributionCount
+                color
+              }
+            }
+          }
         }
         recentRepos: repositories(first: 1, orderBy: {field: PUSHED_AT, direction: DESC}, ownerAffiliations: OWNER) {
           nodes {
@@ -96,6 +107,7 @@ def fetch_graphql_data(username: str) -> dict:
             endCursor
           }
           nodes {
+            isPrivate
             stargazerCount
             forkCount
             languages(first: 10, orderBy: {field: SIZE, direction: DESC}) {
@@ -194,16 +206,17 @@ def process_stats(data: dict) -> dict:
     repo_nodes = repos.get("nodes", [])
 
     # Core repo metrics
-    # Use len(repo_nodes) to ensure we count all paginated public and private repos returned
     total_repos = max(repos.get("totalCount", 0), len(repo_nodes))
     total_stars = sum(r.get("stargazerCount", 0) for r in repo_nodes)
     total_forks = sum(r.get("forkCount", 0) for r in repo_nodes)
 
     # Contributions metrics
     contribs = data.get("contributionsCollection", {})
-    total_commits = contribs.get("totalCommitContributions", 0)
+    
+    public_commits = contribs.get("totalCommitContributions", 0)
     restricted_contribs = contribs.get("restrictedContributionsCount", 0)
-    total_commits += restricted_contribs # Include private contributions
+    total_commits = public_commits + restricted_contribs
+    
     total_prs = contribs.get("totalPullRequestContributions", 0)
     total_issues = contribs.get("totalIssueContributions", 0)
 
@@ -243,7 +256,8 @@ def process_stats(data: dict) -> dict:
         "total_prs": total_prs,
         "total_issues": total_issues,
         "top_languages": top_languages,
-        "last_updated": last_updated
+        "last_updated": last_updated,
+        "private_included": restricted_contribs > 0 or any(r.get("isPrivate") for r in repo_nodes if "isPrivate" in r)
     }
 
 def render_progress_bar(percentage: float, width: int = 20) -> str:
@@ -264,9 +278,9 @@ def render_markdown(stats: dict) -> str:
     lines.append(f"| 📚 Total Repositories | {stats['total_repos']} |")
     lines.append(f"| ⭐ Total Stars | {stats['total_stars']} |")
     lines.append(f"| 🍴 Total Forks | {stats['total_forks']} |")
-    lines.append(f"| 💻 Commits (Last 365 Days) | {stats['total_commits']} |")
-    lines.append(f"| 🔄 Pull Requests (Last 365 Days) | {stats['total_prs']} |")
-    lines.append(f"| 🐛 Issues Created (Last 365 Days) | {stats['total_issues']} |")
+    lines.append(f"| 💻 Total Commits | {stats['total_commits']} |")
+    lines.append(f"| 🔄 Pull Requests | {stats['total_prs']} |")
+    lines.append(f"| 🐛 Issues Created | {stats['total_issues']} |")
     lines.append("")
 
     # Languages section
@@ -281,10 +295,54 @@ def render_markdown(stats: dict) -> str:
         lines.append("```")
         lines.append("")
 
-    # Timestamp
-    lines.append(f"*(Last updated: {stats['last_updated']})*")
+    # Timestamp and notice
+    notice = " (inc. private)" if stats.get("private_included") else ""
+    lines.append(f"*(Last updated: {stats['last_updated']}{notice})*")
 
     return "\n".join(lines) + "\n"
+
+def generate_contribution_svg(calendar_data: dict) -> str:
+    """Generate a GitHub-style heatmap SVG from calendar data."""
+    logger.info("Generating contribution heatmap SVG.")
+    
+    # SVG Layout Constants
+    SQUARE_SIZE = 10
+    GAP = 2
+    RADIUS = 2
+    LEFT_PAD = 0
+    TOP_PAD = 20
+    
+    rects = []
+    
+    # Iterate through weeks and days
+    for w_idx, week in enumerate(calendar_data.get('weeks', [])):
+        x = LEFT_PAD + (w_idx * (SQUARE_SIZE + GAP))
+        for d_idx, day in enumerate(week.get('contributionDays', [])):
+            y = TOP_PAD + (d_idx * (SQUARE_SIZE + GAP))
+            color = day.get('color', '#ebedf0')
+            count = day.get('contributionCount', 0)
+            date = day.get('date', '')
+            
+            rect = (
+                f'<rect width="{SQUARE_SIZE}" height="{SQUARE_SIZE}" '
+                f'x="{x}" y="{y}" fill="{color}" rx="{RADIUS}" ry="{RADIUS}">'
+                f'<title>{count} contributions on {date}</title>'
+                f'</rect>'
+            )
+            rects.append(rect)
+
+    width = (53 * (SQUARE_SIZE + GAP))
+    height = TOP_PAD + (7 * (SQUARE_SIZE + GAP))
+    
+    svg_header = (
+        f'<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" '
+        f'fill="none" xmlns="http://www.w3.org/2000/svg">'
+    )
+    
+    label = f'<text x="0" y="12" fill="#8b949e" font-size="10" font-family="sans-serif">Contribution Activity (inc. private)</text>'
+    
+    svg_content = "\n  ".join(rects)
+    return f"{svg_header}\n  {label}\n  {svg_content}\n</svg>"
 
 def inject_readme(content: str) -> None:
     """Inject rendered markdown into the README.md file."""
@@ -321,6 +379,15 @@ def main():
 
     data = fetch_graphql_data(GITHUB_OWNER)
     stats = process_stats(data)
+    
+    # Generate and save SVG
+    calendar = data.get("contributionsCollection", {}).get("contributionCalendar", {})
+    if calendar:
+        svg_content = generate_contribution_svg(calendar)
+        with open("activity.svg", "w", encoding="utf-8") as f:
+            f.write(svg_content)
+        logger.info("Successfully saved activity.svg")
+
     markdown_content = render_markdown(stats)
     inject_readme(markdown_content)
 
