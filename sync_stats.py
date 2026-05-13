@@ -226,6 +226,8 @@ def process_stats(data: dict) -> dict:
         lang_edges = r.get("languages", {}).get("edges", [])
         for edge in lang_edges:
             name = edge["node"]["name"]
+            if name == "Jupyter Notebook":
+                continue
             size = edge["size"]
             language_sizes[name] = language_sizes.get(name, 0) + size
 
