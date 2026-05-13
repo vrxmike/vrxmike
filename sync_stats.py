@@ -52,7 +52,7 @@ def fetch_graphql_data(username: str) -> dict:
     user_query = """
     query($login: String!, $from: DateTime!, $cursor: String) {
       user(login: $login) {
-        repositories(first: 100, after: $cursor, ownerAffiliations: OWNER, orderBy: {field: STARGAZERS, direction: DESC}) {
+        repositories(first: 100, after: $cursor, ownerAffiliations: [OWNER, COLLABORATOR, ORGANIZATION_MEMBER], orderBy: {field: STARGAZERS, direction: DESC}) {
           totalCount
           pageInfo {
             hasNextPage
@@ -88,7 +88,7 @@ def fetch_graphql_data(username: str) -> dict:
             }
           }
         }
-        recentRepos: repositories(first: 1, orderBy: {field: PUSHED_AT, direction: DESC}, ownerAffiliations: OWNER) {
+        recentRepos: repositories(first: 1, orderBy: {field: PUSHED_AT, direction: DESC}, ownerAffiliations: [OWNER, COLLABORATOR, ORGANIZATION_MEMBER]) {
           nodes {
             pushedAt
           }
@@ -101,7 +101,7 @@ def fetch_graphql_data(username: str) -> dict:
     repo_pagination_query = """
     query($login: String!, $cursor: String) {
       user(login: $login) {
-        repositories(first: 100, after: $cursor, ownerAffiliations: OWNER, orderBy: {field: STARGAZERS, direction: DESC}) {
+        repositories(first: 100, after: $cursor, ownerAffiliations: [OWNER, COLLABORATOR, ORGANIZATION_MEMBER], orderBy: {field: STARGAZERS, direction: DESC}) {
           pageInfo {
             hasNextPage
             endCursor
