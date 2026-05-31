@@ -112,20 +112,20 @@ Building scalable, secure, cloud-native applications — from low-level systems 
 | 📚 Total Repositories | 113 |
 | ⭐ Total Stars | 45 |
 | 🍴 Total Forks | 6 |
-| 💻 Total Commits | 1998 |
-| 🔄 Pull Requests | 576 |
+| 💻 Total Commits | 1997 |
+| 🔄 Pull Requests | 579 |
 | 🐛 Issues Created | 46 |
 
 ### 🏆 Top Languages
 ```text
-Python       ████████████░░░░░░░░  61.59%
-TypeScript   ███░░░░░░░░░░░░░░░░░  15.11%
+Python       ████████████░░░░░░░░  61.55%
+TypeScript   ███░░░░░░░░░░░░░░░░░  15.18%
 HTML         █░░░░░░░░░░░░░░░░░░░   9.18%
 JavaScript   █░░░░░░░░░░░░░░░░░░░   5.82%
 Go           ░░░░░░░░░░░░░░░░░░░░   1.94%
 ```
 
-*(Last updated: May 30, 2026 (inc. private))*
+*(Last updated: May 31, 2026 (inc. private))*
 <!-- END_STATS -->
 
 ### 🛡️ Engineering Insights
