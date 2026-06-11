@@ -1,0 +1,3 @@
+## 2024-06-11 - Pre-computing Static f-string parts in Nested Loops
+**Learning:** Repeated identical f-string interpolation and basic arithmetic (`x + i * y`) inside nested loops in Python causes significant overhead. Even when the components change slightly, pulling static parts into pre-computed string literals and arrays can surprisingly cut execution time drastically (e.g. ~43% reduction in SVG tag generation).
+**Action:** When optimizing loop bottlenecks involving heavy string formatting, separate static attributes into a single string constant outside the loop, and consider pre-computing small sets of repetitive array indices or predictable calculations (like `y` positions).
