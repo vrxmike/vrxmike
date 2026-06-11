@@ -109,11 +109,11 @@ Building scalable, secure, cloud-native applications — from low-level systems 
 <!-- START_STATS -->
 | Metric | Count |
 | :--- | :--- |
-| 📚 Total Repositories | 114 |
-| ⭐ Total Stars | 45 |
-| 🍴 Total Forks | 6 |
+| 📚 Total Repositories | 113 |
+| ⭐ Total Stars | 44 |
+| 🍴 Total Forks | 5 |
 | 💻 Total Commits | 2109 |
-| 🔄 Pull Requests | 603 |
+| 🔄 Pull Requests | 612 |
 | 🐛 Issues Created | 46 |
 
 ### 🏆 Top Languages
@@ -125,7 +125,7 @@ JavaScript   █░░░░░░░░░░░░░░░░░░░   5.92
 Go           ░░░░░░░░░░░░░░░░░░░░   1.92%
 ```
 
-*(Last updated: June 09, 2026 (inc. private))*
+*(Last updated: June 10, 2026 (inc. private))*
 <!-- END_STATS -->
 
 ### 🛡️ Engineering Insights
