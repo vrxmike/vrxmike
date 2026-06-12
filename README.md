@@ -81,7 +81,7 @@ Building scalable, secure, cloud-native applications — from low-level systems 
 - 💼 **ALX Professional Foundations** — Completed December 2025
 - 🚀 **ALX Ventures Founder Academy** — Completed August 2024
 - 🤖 **10x1000 Tech for Inclusion: AI Miniseries** (IFC & Ant Group) — Completed July 2024
-- 💻 **ALX Software Engineering – Backend Specialization** — Completed June 2024
+- 💻 **ALX FullStack Software Engineering – Backend Specialization** — Completed June 2024
 - 📈 **10x1000 Tech for Inclusion: Fintech Foundation** (IFC & Ant Group) — Completed December 2023
 
 - ☁️ **Google Cloud Platform (GCP) Verified Skills** (5+ badges covering Generative AI, Vertex AI, Compute Engine, and Data Pipelines)
