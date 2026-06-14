@@ -314,37 +314,32 @@ def generate_contribution_svg(calendar_data: dict) -> str:
     LEFT_PAD = 0
     TOP_PAD = 20
     
+    # ⚡ Bolt Optimization: Pre-calculate loop steps and use a single optimized f-string
+    # to speed up SVG string generation without sacrificing readability.
+    step = SQUARE_SIZE + GAP
     rects = []
     
     # Iterate through weeks and days
     for w_idx, week in enumerate(calendar_data.get('weeks', [])):
-        x = LEFT_PAD + (w_idx * (SQUARE_SIZE + GAP))
+        x = LEFT_PAD + (w_idx * step)
         for d_idx, day in enumerate(week.get('contributionDays', [])):
-            y = TOP_PAD + (d_idx * (SQUARE_SIZE + GAP))
-            color = day.get('color', '#ebedf0')
-            count = day.get('contributionCount', 0)
-            date = day.get('date', '')
+            y = TOP_PAD + (d_idx * step)
             
-            rect = (
-                f'<rect width="{SQUARE_SIZE}" height="{SQUARE_SIZE}" '
-                f'x="{x}" y="{y}" fill="{color}" rx="{RADIUS}" ry="{RADIUS}">'
-                f'<title>{count} contributions on {date}</title>'
-                f'</rect>'
+            rects.append(
+                f'<rect width="{SQUARE_SIZE}" height="{SQUARE_SIZE}" x="{x}" y="{y}" fill="{day.get("color", "#ebedf0")}" rx="{RADIUS}" ry="{RADIUS}"><title>{day.get("contributionCount", 0)} contributions on {day.get("date", "")}</title></rect>'
             )
-            rects.append(rect)
 
-    width = (53 * (SQUARE_SIZE + GAP))
-    height = TOP_PAD + (7 * (SQUARE_SIZE + GAP))
-    
-    svg_header = (
-        f'<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" '
-        f'fill="none" xmlns="http://www.w3.org/2000/svg">'
-    )
-    
-    label = f'<text x="0" y="12" fill="#8b949e" font-size="10" font-family="sans-serif">Contribution Activity (inc. private)</text>'
-    
     svg_content = "\n  ".join(rects)
-    return f"{svg_header}\n  {label}\n  {svg_content}\n</svg>"
+    
+    width = LEFT_PAD + (53 * step)
+    height = TOP_PAD + (7 * step)
+    
+    return (
+        f'<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" fill="none" xmlns="http://www.w3.org/2000/svg">\n'
+        f'  <text x="0" y="12" fill="#8b949e" font-size="10" font-family="sans-serif">Contribution Activity (inc. private)</text>\n'
+        f'  {svg_content}\n'
+        f'</svg>'
+    )
 
 def inject_readme(content: str) -> None:
     """Inject rendered markdown into the README.md file."""
