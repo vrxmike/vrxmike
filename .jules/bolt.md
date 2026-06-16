@@ -1,0 +1,3 @@
+## 2026-06-16 - Single-Pass Loop Optimization in Python
+**Learning:** Combining multiple generators/comprehensions (like sum(), any()) over a list of dictionaries into a single O(n) `for` loop provides a noticeable CPU time reduction (~14%), despite Python's generator expressions being relatively fast. Direct dictionary checks (`if name in dict`) are also slightly faster than using `dict.get(key, default)` in a tight loop.
+**Action:** When calculating multiple aggregates or extracting various metrics from a single list of objects (especially dicts), avoid stacking `sum()`, list comprehensions, or `any()`. Favor combining them into a single pass to save on iteration overhead.
