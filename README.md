@@ -147,7 +147,7 @@ Go           ░░░░░░░░░░░░░░░░░░░░   1.87
 
 ---
 
-**Hit me up**: [alvinvrxmike@icloud.com](mailto:alvinvrxmike@icloud.com)  
+**Hit me up**: [alvinvrxmike@icloud.com](mailto:hello@alvinmike.tech)  
 **X**: [@bytesfang](https://x.com/bytesfang)
 
 *Let's build secure, scalable solutions in the cloud 🔥*
