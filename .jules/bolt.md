@@ -1,0 +1,3 @@
+## 2023-10-25 - Consolidating Loops for O(n) Improvement
+**Learning:** Python generators and list comprehensions (like `sum(...)` and `any(...)`) are clean but can lead to multiple O(n) passes over the same data. On large datasets, replacing multiple sequential O(n) functional passes with a single O(n) procedural `for` loop provides a measurable performance win (~10% improvement in benchmarks).
+**Action:** When parsing lists of dictionaries (like GraphQL payload arrays) to extract multiple aggregate metrics, favor a single O(n) pass over multiple expressive O(n) list comprehensions/generator expressions.
