@@ -314,13 +314,18 @@ def generate_contribution_svg(calendar_data: dict) -> str:
     LEFT_PAD = 0
     TOP_PAD = 20
     
+    # Bolt Optimization: Pre-calculated constant values for performance
+    SQUARE_TOTAL = SQUARE_SIZE + GAP
+    # Y positions for 7 days
+    Y_POSITIONS = [TOP_PAD + (d_idx * SQUARE_TOTAL) for d_idx in range(7)]
+
     rects = []
     
     # Iterate through weeks and days
     for w_idx, week in enumerate(calendar_data.get('weeks', [])):
-        x = LEFT_PAD + (w_idx * (SQUARE_SIZE + GAP))
+        x = LEFT_PAD + (w_idx * SQUARE_TOTAL)
         for d_idx, day in enumerate(week.get('contributionDays', [])):
-            y = TOP_PAD + (d_idx * (SQUARE_SIZE + GAP))
+            y = Y_POSITIONS[d_idx]
             color = day.get('color', '#ebedf0')
             count = day.get('contributionCount', 0)
             date = day.get('date', '')
@@ -333,8 +338,8 @@ def generate_contribution_svg(calendar_data: dict) -> str:
             )
             rects.append(rect)
 
-    width = (53 * (SQUARE_SIZE + GAP))
-    height = TOP_PAD + (7 * (SQUARE_SIZE + GAP))
+    width = (53 * SQUARE_TOTAL)
+    height = TOP_PAD + (7 * SQUARE_TOTAL)
     
     svg_header = (
         f'<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" '
@@ -354,14 +359,22 @@ def inject_readme(content: str) -> None:
         with open(README_PATH, "r", encoding="utf-8") as f:
             readme_text = f.read()
 
-        pattern = re.compile(r"(<!-- START_STATS -->).*?(<!-- END_STATS -->)", re.DOTALL)
+        # Bolt Optimization: Replace slow Regex + lambda with O(N) string slicing
+        start_marker = "<!-- START_STATS -->"
+        end_marker = "<!-- END_STATS -->"
 
-        if not pattern.search(readme_text):
-            logger.error("Could not find <!-- START_STATS --> and <!-- END_STATS --> markers in README.md")
+        start_idx = readme_text.find(start_marker)
+        if start_idx == -1:
+            logger.error("Could not find <!-- START_STATS --> marker in README.md")
             sys.exit(1)
 
-        # Safely inject with lambda instead of rf-strings
-        new_readme = pattern.sub(lambda m: f"{m.group(1)}\n{content}{m.group(2)}", readme_text)
+        end_idx = readme_text.find(end_marker, start_idx)
+        if end_idx == -1:
+            logger.error("Could not find <!-- END_STATS --> marker in README.md")
+            sys.exit(1)
+
+        start_inject = start_idx + len(start_marker)
+        new_readme = f"{readme_text[:start_inject]}\n{content}{readme_text[end_idx:]}"
 
         with open(README_PATH, "w", encoding="utf-8") as f:
             f.write(new_readme)
