@@ -207,8 +207,27 @@ def process_stats(data: dict) -> dict:
 
     # Core repo metrics
     total_repos = max(repos.get("totalCount", 0), len(repo_nodes))
-    total_stars = sum(r.get("stargazerCount", 0) for r in repo_nodes)
-    total_forks = sum(r.get("forkCount", 0) for r in repo_nodes)
+
+    # ⚡ Bolt Optimization: Single O(N) pass for stars, forks, languages, and private status
+    # Eliminates 4 redundant traversals over the repository nodes list.
+    total_stars = 0
+    total_forks = 0
+    has_private = False
+    language_sizes = {}
+
+    for r in repo_nodes:
+        total_stars += r.get("stargazerCount", 0)
+        total_forks += r.get("forkCount", 0)
+        if not has_private and r.get("isPrivate"):
+            has_private = True
+
+        for edge in r.get("languages", {}).get("edges", []):
+            name = edge["node"]["name"]
+            if name != "Jupyter Notebook":
+                if name in language_sizes:
+                    language_sizes[name] += edge["size"]
+                else:
+                    language_sizes[name] = edge["size"]
 
     # Contributions metrics
     contribs = data.get("contributionsCollection", {})
@@ -220,25 +239,14 @@ def process_stats(data: dict) -> dict:
     total_prs = contribs.get("totalPullRequestContributions", 0)
     total_issues = contribs.get("totalIssueContributions", 0)
 
-    # Language metrics
-    language_sizes = {}
-    for r in repo_nodes:
-        lang_edges = r.get("languages", {}).get("edges", [])
-        for edge in lang_edges:
-            name = edge["node"]["name"]
-            if name == "Jupyter Notebook":
-                continue
-            size = edge["size"]
-            language_sizes[name] = language_sizes.get(name, 0) + size
-
     # Sort and get top 5 languages
     total_bytes = sum(language_sizes.values())
-    sorted_langs = sorted(language_sizes.items(), key=lambda x: x[1], reverse=True)[:5]
-
     top_languages = []
-    for name, size in sorted_langs:
-        percentage = (size / total_bytes * 100) if total_bytes > 0 else 0
-        top_languages.append({"name": name, "percentage": percentage})
+
+    if total_bytes > 0:
+        sorted_langs = sorted(language_sizes.items(), key=lambda x: x[1], reverse=True)[:5]
+        for name, size in sorted_langs:
+            top_languages.append({"name": name, "percentage": (size / total_bytes * 100)})
 
     # Recent activity
     recent_repos = data.get("recentRepos", {}).get("nodes", [])
@@ -259,7 +267,7 @@ def process_stats(data: dict) -> dict:
         "total_issues": total_issues,
         "top_languages": top_languages,
         "last_updated": last_updated,
-        "private_included": restricted_contribs > 0 or any(r.get("isPrivate") for r in repo_nodes if "isPrivate" in r)
+        "private_included": restricted_contribs > 0 or has_private
     }
 
 def render_progress_bar(percentage: float, width: int = 20) -> str:
