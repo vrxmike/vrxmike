@@ -242,7 +242,6 @@ def process_stats(data: dict) -> dict:
 
     # Recent activity
     recent_repos = data.get("recentRepos", {}).get("nodes", [])
-    last_updated = "N/A"
     if recent_repos and "pushedAt" in recent_repos[0] and recent_repos[0]["pushedAt"]:
         pushed_at = recent_repos[0]["pushedAt"]
         dt = datetime.datetime.strptime(pushed_at, "%Y-%m-%dT%H:%M:%SZ")
