@@ -109,11 +109,11 @@ Building scalable, secure, cloud-native applications — from low-level systems 
 <!-- START_STATS -->
 | Metric | Count |
 | :--- | :--- |
-| 📚 Total Repositories | 126 |
+| 📚 Total Repositories | 127 |
 | ⭐ Total Stars | 47 |
 | 🍴 Total Forks | 5 |
-| 💻 Total Commits | 3208 |
-| 🔄 Pull Requests | 1994 |
+| 💻 Total Commits | 3209 |
+| 🔄 Pull Requests | 2018 |
 | 🐛 Issues Created | 40 |
 
 ### 🏆 Top Languages
