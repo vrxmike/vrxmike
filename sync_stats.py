@@ -4,6 +4,7 @@ import sys
 import json
 import logging
 import datetime
+from collections import defaultdict
 from datetime import timezone, timedelta
 import requests
 from requests.adapters import HTTPAdapter
@@ -207,8 +208,6 @@ def process_stats(data: dict) -> dict:
 
     # Core repo metrics
     total_repos = max(repos.get("totalCount", 0), len(repo_nodes))
-    total_stars = sum(r.get("stargazerCount", 0) for r in repo_nodes)
-    total_forks = sum(r.get("forkCount", 0) for r in repo_nodes)
 
     # Contributions metrics
     contribs = data.get("contributionsCollection", {})
@@ -220,16 +219,23 @@ def process_stats(data: dict) -> dict:
     total_prs = contribs.get("totalPullRequestContributions", 0)
     total_issues = contribs.get("totalIssueContributions", 0)
 
-    # Language metrics
-    language_sizes = {}
+    # Consolidated metrics aggregation
+    total_stars = 0
+    total_forks = 0
+    language_sizes = defaultdict(int)
+    has_private = False
+
     for r in repo_nodes:
-        lang_edges = r.get("languages", {}).get("edges", [])
-        for edge in lang_edges:
+        total_stars += r.get("stargazerCount", 0)
+        total_forks += r.get("forkCount", 0)
+
+        if not has_private and r.get("isPrivate"):
+            has_private = True
+
+        for edge in r.get("languages", {}).get("edges", []):
             name = edge["node"]["name"]
-            if name == "Jupyter Notebook":
-                continue
-            size = edge["size"]
-            language_sizes[name] = language_sizes.get(name, 0) + size
+            if name != "Jupyter Notebook":
+                language_sizes[name] += edge["size"]
 
     # Sort and get top 5 languages
     total_bytes = sum(language_sizes.values())
@@ -259,7 +265,7 @@ def process_stats(data: dict) -> dict:
         "total_issues": total_issues,
         "top_languages": top_languages,
         "last_updated": last_updated,
-        "private_included": restricted_contribs > 0 or any(r.get("isPrivate") for r in repo_nodes if "isPrivate" in r)
+        "private_included": restricted_contribs > 0 or has_private
     }
 
 def render_progress_bar(percentage: float, width: int = 20) -> str:
