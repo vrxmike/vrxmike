@@ -97,6 +97,53 @@ def fetch_graphql_data(username: str) -> dict:
     }
     """
 
+    fallback_user_query = """
+    query($login: String!, $from: DateTime!, $cursor: String) {
+      user(login: $login) {
+        repositories(first: 100, after: $cursor, ownerAffiliations: [OWNER, COLLABORATOR, ORGANIZATION_MEMBER], orderBy: {field: STARGAZERS, direction: DESC}) {
+          totalCount
+          pageInfo {
+            hasNextPage
+            endCursor
+          }
+          nodes {
+            isPrivate
+            stargazerCount
+            forkCount
+            languages(first: 10, orderBy: {field: SIZE, direction: DESC}) {
+              edges {
+                size
+                node {
+                  name
+                }
+              }
+            }
+          }
+        }
+        contributionsCollection(from: $from) {
+          totalCommitContributions
+          totalIssueContributions
+          restrictedContributionsCount
+          contributionCalendar {
+            totalContributions
+            weeks {
+              contributionDays {
+                date
+                contributionCount
+                color
+              }
+            }
+          }
+        }
+        recentRepos: repositories(first: 1, orderBy: {field: PUSHED_AT, direction: DESC}, ownerAffiliations: [OWNER, COLLABORATOR, ORGANIZATION_MEMBER]) {
+          nodes {
+            pushedAt
+          }
+        }
+      }
+    }
+    """
+
     # Separate query for paginating through the remaining repos only
     repo_pagination_query = """
     query($login: String!, $cursor: String) {
@@ -147,8 +194,28 @@ def fetch_graphql_data(username: str) -> dict:
         data = response.json()
 
         if "errors" in data:
-            logger.error(f"GraphQL errors: {json.dumps(data['errors'])}")
-            sys.exit(1)
+            resource_limit_on_prs = any(
+                isinstance(error, dict)
+                and error.get("type") == "RESOURCE_LIMITS_EXCEEDED"
+                and "totalPullRequestContributions" in error.get("path", [])
+                for error in data["errors"]
+            )
+            if not resource_limit_on_prs:
+                logger.error(f"GraphQL errors: {json.dumps(data['errors'])}")
+                sys.exit(1)
+
+            logger.warning("GraphQL resource limit hit for totalPullRequestContributions; retrying without that field.")
+            fallback_response = session.post(
+                GRAPHQL_ENDPOINT,
+                json={"query": fallback_user_query, "variables": variables},
+                headers=headers,
+                timeout=15
+            )
+            fallback_response.raise_for_status()
+            data = fallback_response.json()
+            if "errors" in data:
+                logger.error(f"GraphQL fallback errors: {json.dumps(data['errors'])}")
+                sys.exit(1)
 
         user_data = data.get("data", {}).get("user")
         if not user_data:
