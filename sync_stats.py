@@ -205,11 +205,6 @@ def process_stats(data: dict) -> dict:
     repos = data.get("repositories", {})
     repo_nodes = repos.get("nodes", [])
 
-    # Core repo metrics
-    total_repos = max(repos.get("totalCount", 0), len(repo_nodes))
-    total_stars = sum(r.get("stargazerCount", 0) for r in repo_nodes)
-    total_forks = sum(r.get("forkCount", 0) for r in repo_nodes)
-
     # Contributions metrics
     contribs = data.get("contributionsCollection", {})
     
@@ -220,9 +215,20 @@ def process_stats(data: dict) -> dict:
     total_prs = contribs.get("totalPullRequestContributions", 0)
     total_issues = contribs.get("totalIssueContributions", 0)
 
-    # Language metrics
+    # Core repo metrics & Language metrics
+    # ⚡ Bolt Optimization: Combine 4 O(n) passes (stars, forks, languages, privacy) into a single O(n) pass
+    total_repos = max(repos.get("totalCount", 0), len(repo_nodes))
+    total_stars = 0
+    total_forks = 0
     language_sizes = {}
+    private_included = restricted_contribs > 0
+
     for r in repo_nodes:
+        total_stars += r.get("stargazerCount", 0)
+        total_forks += r.get("forkCount", 0)
+        if not private_included and r.get("isPrivate"):
+            private_included = True
+
         lang_edges = r.get("languages", {}).get("edges", [])
         for edge in lang_edges:
             name = edge["node"]["name"]
@@ -259,7 +265,7 @@ def process_stats(data: dict) -> dict:
         "total_issues": total_issues,
         "top_languages": top_languages,
         "last_updated": last_updated,
-        "private_included": restricted_contribs > 0 or any(r.get("isPrivate") for r in repo_nodes if "isPrivate" in r)
+        "private_included": private_included
     }
 
 def render_progress_bar(percentage: float, width: int = 20) -> str:
