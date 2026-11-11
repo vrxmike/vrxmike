@@ -212,6 +212,8 @@ def process_stats(data: dict) -> dict:
 
     # Contributions metrics
     contribs = data.get("contributionsCollection", {})
+    calendar = contribs.get("contributionCalendar", {})
+    total_contributions = calendar.get("totalContributions", 0)
     
     public_commits = contribs.get("totalCommitContributions", 0)
     restricted_contribs = contribs.get("restrictedContributionsCount", 0)
@@ -251,6 +253,7 @@ def process_stats(data: dict) -> dict:
         last_updated = datetime.datetime.now(timezone.utc).strftime("%B %d, %Y")
 
     return {
+        "total_contributions": total_contributions,
         "total_repos": total_repos,
         "total_stars": total_stars,
         "total_forks": total_forks,
@@ -277,6 +280,8 @@ def render_markdown(stats: dict) -> str:
     # Core stats table
     lines.append("| Metric | Count |")
     lines.append("| :--- | :--- |")
+    if stats.get("total_contributions"):
+        lines.append(f"| 🔥 Total Contributions (Past Year) | {stats['total_contributions']:,} |")
     lines.append(f"| 📚 Total Repositories | {stats['total_repos']} |")
     lines.append(f"| ⭐ Total Stars | {stats['total_stars']} |")
     lines.append(f"| 🍴 Total Forks | {stats['total_forks']} |")
