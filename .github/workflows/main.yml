@@ -46,7 +46,7 @@ jobs:
           base: header, activity, community
           config_timezone: Africa/Nairobi
           plugin_isocalendar: yes
-          plugin_isocalendar_duration: half-year
+          plugin_isocalendar_duration: full-year
           plugin_habits: no
           plugin_languages: yes
           plugin_languages_details: bytes-size, percentage
