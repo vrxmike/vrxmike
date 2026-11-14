@@ -1,0 +1,112 @@
+[
+  {
+    "id": "fitechke",
+    "repo": "vrxmike/fitechke",
+    "name": "FITECHKE",
+    "badge": "Luxury Apple Retailer & Lipa Pole Pole Ecosystem",
+    "live_url": "https://www.fitech.co.ke",
+    "gist_id": "9bddc029f0bf7702d0c2542180247e09",
+    "gist_url": "https://gist.github.com/vrxmike/9bddc029f0bf7702d0c2542180247e09",
+    "highlights": "Dual Next.js 16.2 storefront (`fitechpubstore`) & standalone SSR admin portal (`adminsite`), Appwrite TablesDB (8 tables), 3-shield zero-quota SWR/SSG cache, Node 22 installment guard & SasaPay M-Pesa STK webhooks.",
+    "stack": ["TypeScript", "Next.js 16", "Appwrite", "FCM"]
+  },
+  {
+    "id": "machinteriors",
+    "repo": "vrxmike/machinteriors",
+    "name": "Mach Interiors / Pazia World",
+    "badge": "Interior Fabric & Window Styling E-Commerce",
+    "live_url": "https://www.paziaworld.com/shop",
+    "gist_id": null,
+    "gist_url": null,
+    "highlights": "Next.js fabric storefront (`paziaworld`) backed by Appwrite Cloud with multi-tenant migration/seeding engines (`migrate_and_seed_new_project.py`) and custom window measurement calculators.",
+    "stack": ["TypeScript", "Next.js", "Appwrite", "Python"]
+  },
+  {
+    "id": "ai-interview-generator",
+    "repo": "vrxmike/AI-interview-generator",
+    "name": "AI Interview Generator",
+    "badge": "Serverless Technical Screen Engine",
+    "live_url": "https://ai-interview-generator.appwrite.network",
+    "gist_id": null,
+    "gist_url": null,
+    "highlights": "Serverless Next.js 16 + Appwrite Cloud Functions pipeline orchestrating Google Gemini & GitHub Models (`GPT-4o-mini`) with zero client-side token exposure and prompt-injection hardening.",
+    "stack": ["TypeScript", "Next.js 16", "Gemini API", "Appwrite"]
+  },
+  {
+    "id": "blessedhands",
+    "repo": "vrxmike/blessedhands.ai",
+    "name": "BlessedHands AI",
+    "badge": "WebGPU AR Beauty & Virtual Try-On",
+    "live_url": "https://blessedhands-beta.appwrite.network/",
+    "gist_id": null,
+    "gist_url": null,
+    "highlights": "Luxury beauty & fashion styling platform merging real-time MediaPipe facial landmark tracking and 3D WebGPU virtual try-on with Appwrite backend appointment pipelines.",
+    "stack": ["TypeScript", "WebGPU", "MediaPipe", "Appwrite"]
+  },
+  {
+    "id": "bytesfang",
+    "repo": "vrxmike/bytesfang",
+    "name": "BytesFang Monorepo",
+    "badge": "Autonomous Scraping & Intelligence",
+    "live_url": null,
+    "gist_id": null,
+    "gist_url": null,
+    "highlights": "Distributed pnpm monorepo hosting high-concurrency gig/job intelligence scrapers (Playwright + FastAPI) with LLM categorization and candidate scoring pipelines.",
+    "stack": ["TypeScript", "Python", "FastAPI", "Playwright"]
+  },
+  {
+    "id": "mohinteriors",
+    "repo": "vrxmike/mohinteriors",
+    "name": "Mo Interiors KE",
+    "badge": "Immersive 3D Interior Design Webstore",
+    "live_url": "https://mointeriorske.com",
+    "gist_id": null,
+    "gist_url": null,
+    "highlights": "Next.js 16 interior design webstore transforming social catalog media into 3D-visualizable spatial products with Three.js/R3F and Appwrite Cloud.",
+    "stack": ["TypeScript", "Next.js 16", "Three.js", "Appwrite"]
+  },
+  {
+    "id": "promethean",
+    "repo": "vrxmike/promethean",
+    "name": "Promethean MEP Works",
+    "badge": "B2B MEP Engineering Corporate Portal",
+    "live_url": "https://promethean-beta.appwrite.network",
+    "gist_id": null,
+    "gist_url": null,
+    "highlights": "High-performance enterprise corporate engineering portal for East Africa's mechanical, electrical, and plumbing contractor (since 1953) with interactive 3D engineering components.",
+    "stack": ["TypeScript", "Next.js", "Three.js", "Tailwind CSS"]
+  },
+  {
+    "id": "casagamma",
+    "repo": "vrxmike/casagamma",
+    "name": "Casa Gamma",
+    "badge": "Luxury Hospitality Sanctuary Monorepo",
+    "live_url": "https://www.casagammaliving.com",
+    "gist_id": null,
+    "gist_url": null,
+    "highlights": "Unified high-integrity hospitality monorepo powering public guest experience, reservation workflows, and operational administrative dashboard (`apps/admin-dashboard`) backed by Appwrite Cloud.",
+    "stack": ["TypeScript", "Next.js", "Appwrite", "Puppeteer"]
+  },
+  {
+    "id": "nvcbo",
+    "repo": "vrxmike/nvcbo-landing-page",
+    "name": "Northern Vision CBO (NVCBO)",
+    "badge": "Community Development & Portal",
+    "live_url": "https://northernvisionke.org",
+    "gist_id": null,
+    "gist_url": null,
+    "highlights": "Official web portal and community hub for Northern Vision CBO, featuring automated newsletter subscriber delivery (`nvcbo-newsletter`) and impact reporting hubs.",
+    "stack": ["HTML5", "TypeScript", "Tailwind CSS"]
+  },
+  {
+    "id": "alvinmike",
+    "repo": "vrxmike/vrxmike",
+    "name": "Alvin Mike Portfolio Ecosystem",
+    "badge": "Systems & Cloud Identity Hub",
+    "live_url": "https://alvinmike.tech",
+    "gist_id": null,
+    "gist_url": null,
+    "highlights": "Self-updating GitHub profile and personal systems hub driven by GraphQL metrics, GitHub Actions CI/CD, and SVG visual generators.",
+    "stack": ["Python", "GitHub Actions", "GraphQL", "SVG"]
+  }
+]

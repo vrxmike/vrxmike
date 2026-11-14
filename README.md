@@ -109,36 +109,44 @@ Building scalable, secure, cloud-native applications — from low-level systems 
 <!-- START_STATS -->
 | Metric | Count |
 | :--- | :--- |
-| 🔥 Total Contributions (Past Year) | 8,306 |
+| 🔥 Total Contributions (Past Year) | 8,334 |
 | 📚 Total Repositories | 137 |
 | ⭐ Total Stars | 47 |
 | 🍴 Total Forks | 5 |
-| 💻 Total Commits | 4299 |
-| 🔄 Pull Requests | 3868 |
-| 🐛 Issues Created | 43 |
+| 💻 Total Commits | 8256 |
+| 🔄 Pull Requests | 53 |
+| 🐛 Issues Created | 4 |
 
 ### 🏆 Top Languages
 ```text
-Python       ████████░░░░░░░░░░░░  44.19%
-HTML         ████░░░░░░░░░░░░░░░░  22.54%
-TypeScript   ████░░░░░░░░░░░░░░░░  20.91%
-JavaScript   █░░░░░░░░░░░░░░░░░░░   6.11%
+Python       ████████░░░░░░░░░░░░  43.95%
+HTML         ████░░░░░░░░░░░░░░░░  22.81%
+TypeScript   ████░░░░░░░░░░░░░░░░  20.93%
+JavaScript   █░░░░░░░░░░░░░░░░░░░   6.09%
 Go           ░░░░░░░░░░░░░░░░░░░░   1.24%
 ```
 
-*(Last updated: November 13, 2026 (inc. private))*
+*(Last updated: November 14, 2026 (inc. private))*
 <!-- END_STATS -->
 
 ### 🛡️ Engineering Insights
 ![Metrics](./github-metrics.svg)
 
-### 🚀 Currently Leveling Up & Building
-- **[BlessedHands](https://blessedhands-beta.appwrite.network/)** — A luxury, WebGPU-powered AR beauty platform offering hyper-realistic virtual styling and premium appointment booking.
-    - 🌐 **[Live Beta Preview](https://blessedhands-beta.appwrite.network/)** | 🧪 *Refining MediaPipe AR & 3D WebGPU logic.*
-- **BytesFang** — AI-powered automated job and gig scraping pipeline.
-    - 🔒 *Proprietary Engine — Private Repository.*
-- **iProperties** — Modern real estate investment platform featuring glassmorphic UI and robust backend services.
-    - 🏗️ *Architecting secure Appwrite backend modules.*
+### 🚀 Featured Production Systems & Deployed Works
+<!-- START_PROJECTS -->
+| System / Platform | Scope & Access | Architecture & Engineering Highlights | Stack & Activity |
+| :--- | :--- | :--- | :--- |
+| **FITECHKE**<br/>*`Luxury Apple Retailer & Lipa Pole Pole Ecosystem`* | 🌐 [**Live Platform**](https://www.fitech.co.ke)<br/>📐 [**Architecture Gist**](https://gist.github.com/vrxmike/9bddc029f0bf7702d0c2542180247e09)<br/>`🔒 Private` | Dual Next.js 16.2 storefront (`fitechpubstore`) & standalone SSR admin portal (`adminsite`), Appwrite TablesDB (8 tables), 3-shield zero-quota SWR/SSG cache, Node 22 installment guard & SasaPay M-Pesa STK webhooks. | `TypeScript` `Next.js 16` `Appwrite` `FCM`<br/>*(Updated Nov 2026)* |
+| **Mach Interiors / Pazia World**<br/>*`Interior Fabric & Window Styling E-Commerce`* | 🌐 [**Live Platform**](https://www.paziaworld.com/shop)<br/>`🔒 Private` | Next.js fabric storefront (`paziaworld`) backed by Appwrite Cloud with multi-tenant migration/seeding engines (`migrate_and_seed_new_project.py`) and custom window measurement calculators. | `TypeScript` `Next.js` `Appwrite` `Python`<br/>*(Updated Nov 2026)* |
+| **AI Interview Generator**<br/>*`Serverless Technical Screen Engine`* | 🌐 [**Live Platform**](https://ai-interview-generator.appwrite.network)<br/>`🔒 Private` | Serverless Next.js 16 + Appwrite Cloud Functions pipeline orchestrating Google Gemini & GitHub Models (`GPT-4o-mini`) with zero client-side token exposure and prompt-injection hardening. | `TypeScript` `Next.js 16` `Gemini API` `Appwrite`<br/>*(Updated Nov 2026)* |
+| **BlessedHands AI**<br/>*`WebGPU AR Beauty & Virtual Try-On`* | 🌐 [**Live Platform**](https://blessedhands-beta.appwrite.network/)<br/>`🔒 Private` | Luxury beauty & fashion styling platform merging real-time MediaPipe facial landmark tracking and 3D WebGPU virtual try-on with Appwrite backend appointment pipelines. | `TypeScript` `WebGPU` `MediaPipe` `Appwrite`<br/>*(Updated Apr 2026)* |
+| **BytesFang Monorepo**<br/>*`Autonomous Scraping & Intelligence`* | `🔒 Private` | Distributed pnpm monorepo hosting high-concurrency gig/job intelligence scrapers (Playwright + FastAPI) with LLM categorization and candidate scoring pipelines. | `TypeScript` `Python` `FastAPI` `Playwright`<br/>*(Updated Nov 2026)* |
+| **Mo Interiors KE**<br/>*`Immersive 3D Interior Design Webstore`* | 🌐 [**Live Platform**](https://mointeriorske.com)<br/>`🔒 Private` | Next.js 16 interior design webstore transforming social catalog media into 3D-visualizable spatial products with Three.js/R3F and Appwrite Cloud. | `TypeScript` `Next.js 16` `Three.js` `Appwrite`<br/>*(Updated Sep 2026)* |
+| **Promethean MEP Works**<br/>*`B2B MEP Engineering Corporate Portal`* | 🌐 [**Live Platform**](https://promethean-beta.appwrite.network)<br/>`🔒 Private` | High-performance enterprise corporate engineering portal for East Africa's mechanical, electrical, and plumbing contractor (since 1953) with interactive 3D engineering components. | `TypeScript` `Next.js` `Three.js` `Tailwind CSS`<br/>*(Updated Jun 2026)* |
+| **Casa Gamma**<br/>*`Luxury Hospitality Sanctuary Monorepo`* | 🌐 [**Live Platform**](https://www.casagammaliving.com)<br/>`🔒 Private` | Unified high-integrity hospitality monorepo powering public guest experience, reservation workflows, and operational administrative dashboard (`apps/admin-dashboard`) backed by Appwrite Cloud. | `TypeScript` `Next.js` `Appwrite` `Puppeteer`<br/>*(Updated Oct 2026)* |
+| **Northern Vision CBO (NVCBO)**<br/>*`Community Development & Portal`* | 🌐 [**Live Platform**](https://northernvisionke.org)<br/>`🌐 Public` | Official web portal and community hub for Northern Vision CBO, featuring automated newsletter subscriber delivery (`nvcbo-newsletter`) and impact reporting hubs. | `HTML5` `TypeScript` `Tailwind CSS`<br/>*(Updated Sep 2026)* |
+| **Alvin Mike Portfolio Ecosystem**<br/>*`Systems & Cloud Identity Hub`* | 🌐 [**Live Platform**](https://alvinmike.tech)<br/>`🌐 Public` | Self-updating GitHub profile and personal systems hub driven by GraphQL metrics, GitHub Actions CI/CD, and SVG visual generators. | `Python` `GitHub Actions` `GraphQL` `SVG`<br/>*(Updated Nov 2026)* |
+<!-- END_PROJECTS -->
 
 ### 💞️ Open to Collaborate / Work With
 - Fullstack & backend projects (Python/Node + cloud)

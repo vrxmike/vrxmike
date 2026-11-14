@@ -21,6 +21,7 @@ logger = logging.getLogger(__name__)
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 GITHUB_OWNER = os.getenv("GITHUB_REPOSITORY_OWNER")
 README_PATH = "README.md"
+FEATURED_PROJECTS_PATH = "featured_projects.json"
 GRAPHQL_ENDPOINT = "https://api.github.com/graphql"
 
 def get_session():
@@ -59,7 +60,9 @@ def fetch_graphql_data(username: str) -> dict:
             endCursor
           }
           nodes {
+            nameWithOwner
             isPrivate
+            pushedAt
             stargazerCount
             forkCount
             languages(first: 10, orderBy: {field: SIZE, direction: DESC}) {
@@ -107,7 +110,9 @@ def fetch_graphql_data(username: str) -> dict:
             endCursor
           }
           nodes {
+            nameWithOwner
             isPrivate
+            pushedAt
             stargazerCount
             forkCount
             languages(first: 10, orderBy: {field: SIZE, direction: DESC}) {
@@ -351,25 +356,107 @@ def generate_contribution_svg(calendar_data: dict) -> str:
     svg_content = "\n  ".join(rects)
     return f"{svg_header}\n  {label}\n  {svg_content}\n</svg>"
 
-def inject_readme(content: str) -> None:
-    """Inject rendered markdown into the README.md file."""
+def render_featured_projects(user_data: dict) -> str:
+    """Render the featured projects table from featured_projects.json and live repo nodes."""
+    if not os.path.exists(FEATURED_PROJECTS_PATH):
+        logger.warning(f"Featured projects config not found at {FEATURED_PROJECTS_PATH}")
+        return ""
+
+    try:
+        with open(FEATURED_PROJECTS_PATH, "r", encoding="utf-8") as f:
+            projects = json.load(f)
+    except Exception as e:
+        logger.error(f"Failed to read {FEATURED_PROJECTS_PATH}: {e}")
+        return ""
+
+    # Map repo nodes by nameWithOwner
+    repos_by_name = {}
+    for node in user_data.get("repositories", {}).get("nodes", []):
+        name = node.get("nameWithOwner")
+        if name:
+            repos_by_name[name] = node
+
+    lines = [
+        "| System / Platform | Scope & Access | Architecture & Engineering Highlights | Stack & Activity |",
+        "| :--- | :--- | :--- | :--- |"
+    ]
+
+    for p in projects:
+        name = p.get("name", "")
+        badge = p.get("badge", "")
+        repo_name = p.get("repo", "")
+        live_url = p.get("live_url")
+        gist_url = p.get("gist_url")
+        highlights = p.get("highlights", "")
+        stack_list = p.get("stack", [])
+
+        # Retrieve live node if available
+        repo_node = repos_by_name.get(repo_name, {})
+        is_private = repo_node.get("isPrivate", True)
+        pushed_at = repo_node.get("pushedAt")
+
+        # Format System Column
+        col_system = f"**{name}**"
+        if badge:
+            col_system += f"<br/>*`{badge}`*"
+
+        # Format Access / Scope Column
+        access_parts = []
+        if live_url:
+            access_parts.append(f"🌐 [**Live Platform**]({live_url})")
+        if gist_url:
+            access_parts.append(f"📐 [**Architecture Gist**]({gist_url})")
+        
+        vis_tag = "`🔒 Private`" if is_private else "`🌐 Public`"
+        access_parts.append(vis_tag)
+        col_access = "<br/>".join(access_parts)
+
+        # Format Highlights Column
+        col_highlights = highlights
+
+        # Format Stack & Activity Column
+        stack_pills = " ".join([f"`{s}`" for s in stack_list])
+        time_str = ""
+        if pushed_at:
+            try:
+                dt = datetime.datetime.strptime(pushed_at, "%Y-%m-%dT%H:%M:%SZ")
+                time_str = dt.strftime("%b %Y")
+            except Exception:
+                time_str = ""
+        
+        col_stack = stack_pills
+        if time_str:
+            col_stack += f"<br/>*(Updated {time_str})*"
+
+        lines.append(f"| {col_system} | {col_access} | {col_highlights} | {col_stack} |")
+
+    return "\n".join(lines) + "\n"
+
+def inject_readme(stats_content: str, projects_content: str = "") -> None:
+    """Inject rendered stats and featured projects markdown into the README.md file."""
     logger.info(f"Injecting content into {README_PATH}")
 
     try:
         with open(README_PATH, "r", encoding="utf-8") as f:
             readme_text = f.read()
 
-        pattern = re.compile(r"(<!-- START_STATS -->).*?(<!-- END_STATS -->)", re.DOTALL)
+        # Inject Stats
+        stats_pattern = re.compile(r"(<!-- START_STATS -->).*?(<!-- END_STATS -->)", re.DOTALL)
+        if stats_pattern.search(readme_text):
+            readme_text = stats_pattern.sub(lambda m: f"{m.group(1)}\n{stats_content}{m.group(2)}", readme_text)
+        else:
+            logger.warning("Could not find <!-- START_STATS --> and <!-- END_STATS --> markers in README.md")
 
-        if not pattern.search(readme_text):
-            logger.error("Could not find <!-- START_STATS --> and <!-- END_STATS --> markers in README.md")
-            sys.exit(1)
-
-        # Safely inject with lambda instead of rf-strings
-        new_readme = pattern.sub(lambda m: f"{m.group(1)}\n{content}{m.group(2)}", readme_text)
+        # Inject Projects
+        if projects_content:
+            projects_pattern = re.compile(r"(<!-- START_PROJECTS -->).*?(<!-- END_PROJECTS -->)", re.DOTALL)
+            if projects_pattern.search(readme_text):
+                readme_text = projects_pattern.sub(lambda m: f"{m.group(1)}\n{projects_content}{m.group(2)}", readme_text)
+            else:
+                logger.warning("Could not find <!-- START_PROJECTS --> and <!-- END_PROJECTS --> markers in README.md")
 
         with open(README_PATH, "w", encoding="utf-8") as f:
-            f.write(new_readme)
+            f.write(readme_text)
 
         logger.info("Successfully updated README.md")
     except FileNotFoundError:
@@ -395,8 +482,9 @@ def main():
             f.write(svg_content)
         logger.info("Successfully saved activity.svg")
 
-    markdown_content = render_markdown(stats)
-    inject_readme(markdown_content)
+    markdown_stats = render_markdown(stats)
+    markdown_projects = render_featured_projects(data)
+    inject_readme(markdown_stats, markdown_projects)
 
 if __name__ == "__main__":
     main()
