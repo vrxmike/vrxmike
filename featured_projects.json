@@ -5,8 +5,8 @@
     "name": "FITECHKE",
     "badge": "Luxury Apple Retailer & Lipa Pole Pole Ecosystem",
     "live_url": "https://www.fitech.co.ke",
-    "gist_id": "9bddc029f0bf7702d0c2542180247e09",
-    "gist_url": "https://gist.github.com/vrxmike/9bddc029f0bf7702d0c2542180247e09",
+    "gist_id": null,
+    "gist_url": null,
     "highlights": "Dual Next.js 16.2 storefront & SSR admin portal, Appwrite TablesDB (8 tables), 3-shield zero-quota SWR/SSG cache, Node 22 installment guard & SasaPay M-Pesa STK webhooks.",
     "stack": ["TypeScript", "Next.js 16", "Appwrite", "FCM"]
   },
@@ -16,8 +16,8 @@
     "name": "Mach Interiors / Pazia World",
     "badge": "Interior Fabric & Window Styling E-Commerce",
     "live_url": "https://www.paziaworld.com/shop",
-    "gist_id": "18a8037013ebfad1a945e90eb44e7550",
-    "gist_url": "https://gist.github.com/vrxmike/18a8037013ebfad1a945e90eb44e7550",
+    "gist_id": null,
+    "gist_url": null,
     "highlights": "Next.js fabric storefront (`paziaworld`) backed by Appwrite Cloud with Python multi-tenant catalog migration/seeding pipelines and 3D/motion product views.",
     "stack": ["TypeScript", "Next.js", "Appwrite", "Python"]
   },
@@ -27,8 +27,8 @@
     "name": "AI Interview Generator",
     "badge": "Serverless Technical Screen Engine",
     "live_url": "https://ai-interview-generator.appwrite.network",
-    "gist_id": "5ffa21f5dc1c900db8c2d6eafb7a03cb",
-    "gist_url": "https://gist.github.com/vrxmike/5ffa21f5dc1c900db8c2d6eafb7a03cb",
+    "gist_id": null,
+    "gist_url": null,
     "highlights": "Serverless Next.js 16 + Appwrite Cloud Function orchestrating Google Gemini & GitHub Models (`GPT-4o-mini`) with zero client-side token exposure and prompt-injection guards.",
     "stack": ["TypeScript", "Next.js 16", "Gemini API", "Appwrite"]
   },
@@ -38,8 +38,8 @@
     "name": "BlessedHands AI",
     "badge": "WebGPU AR Beauty & Virtual Try-On",
     "live_url": "https://blessedhands-beta.appwrite.network/",
-    "gist_id": "6d493c952a18cc30bed146f13455d671",
-    "gist_url": "https://gist.github.com/vrxmike/6d493c952a18cc30bed146f13455d671",
+    "gist_id": null,
+    "gist_url": null,
     "highlights": "Luxury beauty & styling platform merging real-time MediaPipe facial landmark tracking and Three.js/R3F virtual try-on with Appwrite booking & Zustand checkout.",
     "stack": ["TypeScript", "MediaPipe", "Three.js", "Appwrite"]
   },
@@ -49,8 +49,8 @@
     "name": "BytesFang Monorepo",
     "badge": "Portfolio & Experimental Labs Workspace",
     "live_url": null,
-    "gist_id": "6907a67270aa902da892235eef7c06b2",
-    "gist_url": "https://gist.github.com/vrxmike/6907a67270aa902da892235eef7c06b2",
+    "gist_id": null,
+    "gist_url": null,
     "highlights": "pnpm workspaces monorepo hosting `apps/portfolio` (`alvinmike.tech`) and `apps/labs` (`labs.alvinmike.tech`) built with Next.js 16, Three.js WebGL, Framer Motion & Appwrite Sites.",
     "stack": ["TypeScript", "Next.js 16", "Three.js", "Appwrite"]
   },
@@ -60,8 +60,8 @@
     "name": "Mo Interiors KE",
     "badge": "Immersive 3D Interior Design Webstore",
     "live_url": "https://mointeriorske.com",
-    "gist_id": "f8cb3b06ff04762ec89aa7709ab200cb",
-    "gist_url": "https://gist.github.com/vrxmike/f8cb3b06ff04762ec89aa7709ab200cb",
+    "gist_id": null,
+    "gist_url": null,
     "highlights": "Next.js 16 webstore transforming social catalog media via AI ingestion into 3D-visualizable spatial products (Three.js/R3F) on a `moi_` multi-tenant Appwrite backend.",
     "stack": ["TypeScript", "Next.js 16", "Three.js", "Appwrite"]
   },
@@ -71,8 +71,8 @@
     "name": "Promethean MEP Works",
     "badge": "B2B MEP Engineering Corporate Portal",
     "live_url": "https://promethean-beta.appwrite.network",
-    "gist_id": "7680e9b381010faebfd0746cdb53a218",
-    "gist_url": "https://gist.github.com/vrxmike/7680e9b381010faebfd0746cdb53a218",
+    "gist_id": null,
+    "gist_url": null,
     "highlights": "Enterprise engineering portal for East Africa's MEP contractor (since 1953) featuring Next.js 16 RSC, Three.js/R3F postprocessing scenes, and custom CSS design tokens.",
     "stack": ["TypeScript", "Next.js 16", "Three.js", "Framer Motion"]
   },
@@ -82,8 +82,8 @@
     "name": "Casa Gamma",
     "badge": "Luxury Hospitality Sanctuary Monorepo",
     "live_url": "https://www.casagammaliving.com",
-    "gist_id": "d4f97b1d7a2419235eaf3ef670d76285",
-    "gist_url": "https://gist.github.com/vrxmike/d4f97b1d7a2419235eaf3ef670d76285",
+    "gist_id": null,
+    "gist_url": null,
     "highlights": "Monorepo pairing `public-site` (Next.js 16 + MapLibre/Deck.gl + Three.js) with `admin-dashboard` (Clerk) and 4 Appwrite serverless functions for identity sync & FCM alerts.",
     "stack": ["TypeScript", "Next.js 16", "Clerk", "Appwrite"]
   },
@@ -104,8 +104,8 @@
     "name": "Alvin Mike Portfolio",
     "badge": "Personal Portfolio & Interactive Identity Hub",
     "live_url": "https://alvinmike.tech",
-    "gist_id": "6907a67270aa902da892235eef7c06b2",
-    "gist_url": "https://gist.github.com/vrxmike/6907a67270aa902da892235eef7c06b2",
+    "gist_id": null,
+    "gist_url": null,
     "highlights": "Official portfolio website (`apps/portfolio`), architected with Next.js 16, React 19, Three.js 3D canvas, Radix UI command palette (`CMD+K`), and Appwrite Cloud edge delivery.",
     "stack": ["TypeScript", "Next.js 16", "Three.js", "Appwrite"]
   }

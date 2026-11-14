@@ -109,20 +109,20 @@ Building scalable, secure, cloud-native applications — from low-level systems 
 <!-- START_STATS -->
 | Metric | Count |
 | :--- | :--- |
-| 🔥 Total Contributions (Past Year) | 8,342 |
+| 🔥 Total Contributions (Past Year) | 8,370 |
 | 📚 Total Repositories | 137 |
 | ⭐ Total Stars | 47 |
 | 🍴 Total Forks | 5 |
-| 💻 Total Commits | 4335 |
-| 🔄 Pull Requests | 3868 |
-| 🐛 Issues Created | 43 |
+| 💻 Total Commits | 8292 |
+| 🔄 Pull Requests | 53 |
+| 🐛 Issues Created | 4 |
 
 ### 🏆 Top Languages
 ```text
-Python       ████████░░░░░░░░░░░░  43.94%
-HTML         ████░░░░░░░░░░░░░░░░  22.83%
-TypeScript   ████░░░░░░░░░░░░░░░░  20.92%
-JavaScript   █░░░░░░░░░░░░░░░░░░░   6.09%
+Python       ████████░░░░░░░░░░░░  43.88%
+HTML         ████░░░░░░░░░░░░░░░░  22.85%
+TypeScript   ████░░░░░░░░░░░░░░░░  20.95%
+JavaScript   █░░░░░░░░░░░░░░░░░░░   6.11%
 Go           ░░░░░░░░░░░░░░░░░░░░   1.24%
 ```
 
@@ -139,21 +139,21 @@ Go           ░░░░░░░░░░░░░░░░░░░░   1.24
 > This profile README, live language telemetry, `activity.svg`, and project `Updated` timestamps are **autonomously harvested and updated daily at midnight UTC via [GitHub Actions](./.github/workflows/main.yml)**.
 > - **Engine:** Python GraphQL ingestion ([`sync_stats.py`](./sync_stats.py)) paired with [`featured_projects.json`](./featured_projects.json) and `lowlighter/metrics` (`github-metrics.svg`).
 > - **Self-Healing & Rebase:** Runs on `ubuntu-24.04` runners with an atomic `git commit`, `git pull --rebase`, and push pipeline.
-> - **Zero-404 Private Repo Telemetry:** Bridges live activity from 65+ private repositories into this public showcase alongside live deployments and architectural Gists—without exposing proprietary source code.
+> - **Zero-404 Private Repo Telemetry:** Bridges live activity from 65+ private repositories into this public showcase alongside live deployments—without exposing proprietary source code.
 
 <!-- START_PROJECTS -->
 | System / Platform | Scope & Access | Architecture & Engineering Highlights | Stack & Activity |
 | :--- | :--- | :--- | :--- |
-| **FITECHKE**<br/><sub>Luxury Apple Retailer & Lipa Pole Pole Ecosystem</sub> | 🌐 [**Live**](https://www.fitech.co.ke)<br/>📐 [**Blueprint**](https://gist.github.com/vrxmike/9bddc029f0bf7702d0c2542180247e09)<br/>`🔒 Private` | Dual Next.js 16.2 storefront & SSR admin portal, Appwrite TablesDB (8 tables), 3-shield zero-quota SWR/SSG cache, Node 22 installment guard & SasaPay M-Pesa STK webhooks. | `TypeScript` `Next.js 16` `Appwrite` `FCM`<br/>*(Updated Nov 2026)* |
-| **Mach Interiors / Pazia World**<br/><sub>Interior Fabric & Window Styling E-Commerce</sub> | 🌐 [**Live**](https://www.paziaworld.com/shop)<br/>📐 [**Blueprint**](https://gist.github.com/vrxmike/18a8037013ebfad1a945e90eb44e7550)<br/>`🔒 Private` | Next.js fabric storefront (`paziaworld`) backed by Appwrite Cloud with Python multi-tenant catalog migration/seeding pipelines and 3D/motion product views. | `TypeScript` `Next.js` `Appwrite` `Python`<br/>*(Updated Nov 2026)* |
-| **AI Interview Generator**<br/><sub>Serverless Technical Screen Engine</sub> | 🌐 [**Live**](https://ai-interview-generator.appwrite.network)<br/>📐 [**Blueprint**](https://gist.github.com/vrxmike/5ffa21f5dc1c900db8c2d6eafb7a03cb)<br/>`🔒 Private` | Serverless Next.js 16 + Appwrite Cloud Function orchestrating Google Gemini & GitHub Models (`GPT-4o-mini`) with zero client-side token exposure and prompt-injection guards. | `TypeScript` `Next.js 16` `Gemini API` `Appwrite`<br/>*(Updated Nov 2026)* |
-| **BlessedHands AI**<br/><sub>WebGPU AR Beauty & Virtual Try-On</sub> | 🌐 [**Live**](https://blessedhands-beta.appwrite.network/)<br/>📐 [**Blueprint**](https://gist.github.com/vrxmike/6d493c952a18cc30bed146f13455d671)<br/>`🔒 Private` | Luxury beauty & styling platform merging real-time MediaPipe facial landmark tracking and Three.js/R3F virtual try-on with Appwrite booking & Zustand checkout. | `TypeScript` `MediaPipe` `Three.js` `Appwrite`<br/>*(Updated Apr 2026)* |
-| **BytesFang Monorepo**<br/><sub>Portfolio & Experimental Labs Workspace</sub> | 📐 [**Blueprint**](https://gist.github.com/vrxmike/6907a67270aa902da892235eef7c06b2)<br/>`🔒 Private` | pnpm workspaces monorepo hosting `apps/portfolio` (`alvinmike.tech`) and `apps/labs` (`labs.alvinmike.tech`) built with Next.js 16, Three.js WebGL, Framer Motion & Appwrite Sites. | `TypeScript` `Next.js 16` `Three.js` `Appwrite`<br/>*(Updated Nov 2026)* |
-| **Mo Interiors KE**<br/><sub>Immersive 3D Interior Design Webstore</sub> | 🌐 [**Live**](https://mointeriorske.com)<br/>📐 [**Blueprint**](https://gist.github.com/vrxmike/f8cb3b06ff04762ec89aa7709ab200cb)<br/>`🔒 Private` | Next.js 16 webstore transforming social catalog media via AI ingestion into 3D-visualizable spatial products (Three.js/R3F) on a `moi_` multi-tenant Appwrite backend. | `TypeScript` `Next.js 16` `Three.js` `Appwrite`<br/>*(Updated Sep 2026)* |
-| **Promethean MEP Works**<br/><sub>B2B MEP Engineering Corporate Portal</sub> | 🌐 [**Live**](https://promethean-beta.appwrite.network)<br/>📐 [**Blueprint**](https://gist.github.com/vrxmike/7680e9b381010faebfd0746cdb53a218)<br/>`🔒 Private` | Enterprise engineering portal for East Africa's MEP contractor (since 1953) featuring Next.js 16 RSC, Three.js/R3F postprocessing scenes, and custom CSS design tokens. | `TypeScript` `Next.js 16` `Three.js` `Framer Motion`<br/>*(Updated Jun 2026)* |
-| **Casa Gamma**<br/><sub>Luxury Hospitality Sanctuary Monorepo</sub> | 🌐 [**Live**](https://www.casagammaliving.com)<br/>📐 [**Blueprint**](https://gist.github.com/vrxmike/d4f97b1d7a2419235eaf3ef670d76285)<br/>`🔒 Private` | Monorepo pairing `public-site` (Next.js 16 + MapLibre/Deck.gl + Three.js) with `admin-dashboard` (Clerk) and 4 Appwrite serverless functions for identity sync & FCM alerts. | `TypeScript` `Next.js 16` `Clerk` `Appwrite`<br/>*(Updated Oct 2026)* |
+| **FITECHKE**<br/><sub>Luxury Apple Retailer & Lipa Pole Pole Ecosystem</sub> | 🌐 [**Live**](https://www.fitech.co.ke)<br/>`🔒 Private` | Dual Next.js 16.2 storefront & SSR admin portal, Appwrite TablesDB (8 tables), 3-shield zero-quota SWR/SSG cache, Node 22 installment guard & SasaPay M-Pesa STK webhooks. | `TypeScript` `Next.js 16` `Appwrite` `FCM`<br/>*(Updated Nov 2026)* |
+| **Mach Interiors / Pazia World**<br/><sub>Interior Fabric & Window Styling E-Commerce</sub> | 🌐 [**Live**](https://www.paziaworld.com/shop)<br/>`🔒 Private` | Next.js fabric storefront (`paziaworld`) backed by Appwrite Cloud with Python multi-tenant catalog migration/seeding pipelines and 3D/motion product views. | `TypeScript` `Next.js` `Appwrite` `Python`<br/>*(Updated Nov 2026)* |
+| **AI Interview Generator**<br/><sub>Serverless Technical Screen Engine</sub> | 🌐 [**Live**](https://ai-interview-generator.appwrite.network)<br/>`🔒 Private` | Serverless Next.js 16 + Appwrite Cloud Function orchestrating Google Gemini & GitHub Models (`GPT-4o-mini`) with zero client-side token exposure and prompt-injection guards. | `TypeScript` `Next.js 16` `Gemini API` `Appwrite`<br/>*(Updated Nov 2026)* |
+| **BlessedHands AI**<br/><sub>WebGPU AR Beauty & Virtual Try-On</sub> | 🌐 [**Live**](https://blessedhands-beta.appwrite.network/)<br/>`🔒 Private` | Luxury beauty & styling platform merging real-time MediaPipe facial landmark tracking and Three.js/R3F virtual try-on with Appwrite booking & Zustand checkout. | `TypeScript` `MediaPipe` `Three.js` `Appwrite`<br/>*(Updated Apr 2026)* |
+| **BytesFang Monorepo**<br/><sub>Portfolio & Experimental Labs Workspace</sub> | `🔒 Private` | pnpm workspaces monorepo hosting `apps/portfolio` (`alvinmike.tech`) and `apps/labs` (`labs.alvinmike.tech`) built with Next.js 16, Three.js WebGL, Framer Motion & Appwrite Sites. | `TypeScript` `Next.js 16` `Three.js` `Appwrite`<br/>*(Updated Nov 2026)* |
+| **Mo Interiors KE**<br/><sub>Immersive 3D Interior Design Webstore</sub> | 🌐 [**Live**](https://mointeriorske.com)<br/>`🔒 Private` | Next.js 16 webstore transforming social catalog media via AI ingestion into 3D-visualizable spatial products (Three.js/R3F) on a `moi_` multi-tenant Appwrite backend. | `TypeScript` `Next.js 16` `Three.js` `Appwrite`<br/>*(Updated Sep 2026)* |
+| **Promethean MEP Works**<br/><sub>B2B MEP Engineering Corporate Portal</sub> | 🌐 [**Live**](https://promethean-beta.appwrite.network)<br/>`🔒 Private` | Enterprise engineering portal for East Africa's MEP contractor (since 1953) featuring Next.js 16 RSC, Three.js/R3F postprocessing scenes, and custom CSS design tokens. | `TypeScript` `Next.js 16` `Three.js` `Framer Motion`<br/>*(Updated Jun 2026)* |
+| **Casa Gamma**<br/><sub>Luxury Hospitality Sanctuary Monorepo</sub> | 🌐 [**Live**](https://www.casagammaliving.com)<br/>`🔒 Private` | Monorepo pairing `public-site` (Next.js 16 + MapLibre/Deck.gl + Three.js) with `admin-dashboard` (Clerk) and 4 Appwrite serverless functions for identity sync & FCM alerts. | `TypeScript` `Next.js 16` `Clerk` `Appwrite`<br/>*(Updated Oct 2026)* |
 | **Northern Vision CBO (NVCBO)**<br/><sub>Community Development & Portal</sub> | 🌐 [**Live**](https://northernvisionke.org)<br/>📦 [**Source**](https://github.com/vrxmike/nvcbo-landing-page)<br/>`🌐 Public` | Official web portal and community hub for Northern Vision CBO, featuring impact reporting hubs and automated newsletter delivery (`nvcbo-newsletter`). | `HTML5` `TypeScript` `Tailwind CSS`<br/>*(Updated Sep 2026)* |
-| **Alvin Mike Portfolio**<br/><sub>Personal Portfolio & Interactive Identity Hub</sub> | 🌐 [**Live**](https://alvinmike.tech)<br/>📐 [**Blueprint**](https://gist.github.com/vrxmike/6907a67270aa902da892235eef7c06b2)<br/>`🔒 Private` | Official portfolio website (`apps/portfolio`), architected with Next.js 16, React 19, Three.js 3D canvas, Radix UI command palette (`CMD+K`), and Appwrite Cloud edge delivery. | `TypeScript` `Next.js 16` `Three.js` `Appwrite`<br/>*(Updated Nov 2026)* |
+| **Alvin Mike Portfolio**<br/><sub>Personal Portfolio & Interactive Identity Hub</sub> | 🌐 [**Live**](https://alvinmike.tech)<br/>`🔒 Private` | Official portfolio website (`apps/portfolio`), architected with Next.js 16, React 19, Three.js 3D canvas, Radix UI command palette (`CMD+K`), and Appwrite Cloud edge delivery. | `TypeScript` `Next.js 16` `Three.js` `Appwrite`<br/>*(Updated Nov 2026)* |
 <!-- END_PROJECTS -->
 
 ### 💞️ Open to Collaborate / Work With
