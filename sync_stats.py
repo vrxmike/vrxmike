@@ -398,15 +398,17 @@ def render_featured_projects(user_data: dict) -> str:
         # Format System Column
         col_system = f"**{name}**"
         if badge:
-            col_system += f"<br/>*`{badge}`*"
+            col_system += f"<br/><sub>{badge}</sub>"
 
         # Format Access / Scope Column
         access_parts = []
         if live_url:
-            access_parts.append(f"🌐 [**Live Platform**]({live_url})")
+            access_parts.append(f"🌐 [**Live**]({live_url})")
         if gist_url:
-            access_parts.append(f"📐 [**Architecture Gist**]({gist_url})")
-        
+            access_parts.append(f"📐 [**Blueprint**]({gist_url})")
+        if not is_private and repo_name:
+            access_parts.append(f"📦 [**Source**](https://github.com/{repo_name})")
+
         vis_tag = "`🔒 Private`" if is_private else "`🌐 Public`"
         access_parts.append(vis_tag)
         col_access = "<br/>".join(access_parts)
