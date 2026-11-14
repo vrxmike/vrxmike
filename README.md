@@ -109,11 +109,11 @@ Building scalable, secure, cloud-native applications — from low-level systems 
 <!-- START_STATS -->
 | Metric | Count |
 | :--- | :--- |
-| 🔥 Total Contributions (Past Year) | 8,334 |
+| 🔥 Total Contributions (Past Year) | 8,336 |
 | 📚 Total Repositories | 137 |
 | ⭐ Total Stars | 47 |
 | 🍴 Total Forks | 5 |
-| 💻 Total Commits | 8256 |
+| 💻 Total Commits | 8258 |
 | 🔄 Pull Requests | 53 |
 | 🐛 Issues Created | 4 |
 
@@ -145,7 +145,7 @@ Go           ░░░░░░░░░░░░░░░░░░░░   1.24
 | **Promethean MEP Works**<br/>*`B2B MEP Engineering Corporate Portal`* | 🌐 [**Live Platform**](https://promethean-beta.appwrite.network)<br/>`🔒 Private` | High-performance enterprise corporate engineering portal for East Africa's mechanical, electrical, and plumbing contractor (since 1953) with interactive 3D engineering components. | `TypeScript` `Next.js` `Three.js` `Tailwind CSS`<br/>*(Updated Jun 2026)* |
 | **Casa Gamma**<br/>*`Luxury Hospitality Sanctuary Monorepo`* | 🌐 [**Live Platform**](https://www.casagammaliving.com)<br/>`🔒 Private` | Unified high-integrity hospitality monorepo powering public guest experience, reservation workflows, and operational administrative dashboard (`apps/admin-dashboard`) backed by Appwrite Cloud. | `TypeScript` `Next.js` `Appwrite` `Puppeteer`<br/>*(Updated Oct 2026)* |
 | **Northern Vision CBO (NVCBO)**<br/>*`Community Development & Portal`* | 🌐 [**Live Platform**](https://northernvisionke.org)<br/>`🌐 Public` | Official web portal and community hub for Northern Vision CBO, featuring automated newsletter subscriber delivery (`nvcbo-newsletter`) and impact reporting hubs. | `HTML5` `TypeScript` `Tailwind CSS`<br/>*(Updated Sep 2026)* |
-| **Alvin Mike Portfolio Ecosystem**<br/>*`Systems & Cloud Identity Hub`* | 🌐 [**Live Platform**](https://alvinmike.tech)<br/>`🌐 Public` | Self-updating GitHub profile and personal systems hub driven by GraphQL metrics, GitHub Actions CI/CD, and SVG visual generators. | `Python` `GitHub Actions` `GraphQL` `SVG`<br/>*(Updated Nov 2026)* |
+| **Alvin Mike Portfolio**<br/>*`Personal Portfolio & Interactive Identity Hub`* | 🌐 [**Live Platform**](https://alvinmike.tech)<br/>`🔒 Private` | Official portfolio website for Alvin Mike, architected with Next.js 16, React 19, Three.js 3D canvas, Radix UI command palette (CMD+K), and Appwrite Cloud edge delivery. | `TypeScript` `Next.js 16` `Three.js` `Appwrite`<br/>*(Updated Nov 2026)* |
 <!-- END_PROJECTS -->
 
 ### 💞️ Open to Collaborate / Work With

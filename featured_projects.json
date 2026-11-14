@@ -100,13 +100,13 @@
   },
   {
     "id": "alvinmike",
-    "repo": "vrxmike/vrxmike",
-    "name": "Alvin Mike Portfolio Ecosystem",
-    "badge": "Systems & Cloud Identity Hub",
+    "repo": "vrxmike/bytesfang",
+    "name": "Alvin Mike Portfolio",
+    "badge": "Personal Portfolio & Interactive Identity Hub",
     "live_url": "https://alvinmike.tech",
     "gist_id": null,
     "gist_url": null,
-    "highlights": "Self-updating GitHub profile and personal systems hub driven by GraphQL metrics, GitHub Actions CI/CD, and SVG visual generators.",
-    "stack": ["Python", "GitHub Actions", "GraphQL", "SVG"]
+    "highlights": "Official portfolio website for Alvin Mike, architected with Next.js 16, React 19, Three.js 3D canvas, Radix UI command palette (CMD+K), and Appwrite Cloud edge delivery.",
+    "stack": ["TypeScript", "Next.js 16", "Three.js", "Appwrite"]
   }
 ]
