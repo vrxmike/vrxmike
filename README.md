@@ -133,6 +133,14 @@ Go           ░░░░░░░░░░░░░░░░░░░░   1.24
 ![Metrics](./github-metrics.svg)
 
 ### 🚀 Featured Production Systems & Deployed Works
+
+> [!TIP]
+> ### ⚡ Autonomous Profile Pipeline (GitHub Actions CI/CD)
+> This profile README, live language telemetry, `activity.svg`, and project `Updated` timestamps are **autonomously harvested and updated daily at midnight UTC via [GitHub Actions](./.github/workflows/main.yml)**.
+> - **Engine:** Python GraphQL ingestion ([`sync_stats.py`](./sync_stats.py)) paired with [`featured_projects.json`](./featured_projects.json) and `lowlighter/metrics` (`github-metrics.svg`).
+> - **Self-Healing & Rebase:** Runs on `ubuntu-24.04` runners with an atomic `git commit`, `git pull --rebase`, and push pipeline.
+> - **Zero-404 Private Repo Telemetry:** Bridges live activity from 65+ private repositories into this public showcase alongside live deployments and architectural Gists—without exposing proprietary source code.
+
 <!-- START_PROJECTS -->
 | System / Platform | Scope & Access | Architecture & Engineering Highlights | Stack & Activity |
 | :--- | :--- | :--- | :--- |
