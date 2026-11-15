@@ -15,7 +15,7 @@
     "repo": "vrxmike/machinteriors",
     "name": "Mach Interiors / Pazia World",
     "badge": "Interior Fabric & Window Styling E-Commerce",
-    "live_url": "https://www.paziaworld.com/shop",
+    "live_url": "https://www.paziaworld.com",
     "gist_id": null,
     "gist_url": null,
     "highlights": "Next.js fabric storefront (`paziaworld`) backed by Appwrite Cloud with Python multi-tenant catalog migration/seeding pipelines and 3D/motion product views.",
