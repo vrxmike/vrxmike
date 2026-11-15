@@ -386,6 +386,7 @@ def render_featured_projects(user_data: dict) -> str:
         badge = p.get("badge", "")
         repo_name = p.get("repo", "")
         live_url = p.get("live_url")
+        wiki_url = p.get("wiki_url")
         gist_url = p.get("gist_url")
         highlights = p.get("highlights", "")
         stack_list = p.get("stack", [])
@@ -404,10 +405,12 @@ def render_featured_projects(user_data: dict) -> str:
         access_parts = []
         if live_url:
             access_parts.append(f"🌐 [**Live**]({live_url})")
+        if wiki_url:
+            access_parts.append(f"📖 [**Wiki**]({wiki_url})")
+        elif not is_private and repo_name:
+            access_parts.append(f"📦 [**Source**](https://github.com/{repo_name})")
         if gist_url:
             access_parts.append(f"📐 [**Blueprint**]({gist_url})")
-        if not is_private and repo_name:
-            access_parts.append(f"📦 [**Source**](https://github.com/{repo_name})")
 
         vis_tag = "`🔒 Private`" if is_private else "`🌐 Public`"
         access_parts.append(vis_tag)

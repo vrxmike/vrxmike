@@ -93,9 +93,10 @@
     "name": "Northern Vision CBO (NVCBO)",
     "badge": "Community Development & Portal",
     "live_url": "https://northernvisionke.org",
+    "wiki_url": "https://github.com/vrxmike/nvcbo-landing-page/wiki",
     "gist_id": null,
     "gist_url": null,
-    "highlights": "Official web portal and community hub for Northern Vision CBO, featuring impact reporting hubs and automated newsletter delivery (`nvcbo-newsletter`).",
+    "highlights": "Official web portal and community hub for Northern Vision CBO, featuring impact reporting hubs, automated newsletter delivery (`nvcbo-newsletter`), and full project documentation in the repository Wiki.",
     "stack": ["HTML5", "TypeScript", "Tailwind CSS"]
   },
   {

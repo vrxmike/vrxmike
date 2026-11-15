@@ -109,19 +109,19 @@ Building scalable, secure, cloud-native applications — from low-level systems 
 <!-- START_STATS -->
 | Metric | Count |
 | :--- | :--- |
-| 🔥 Total Contributions (Past Year) | 8,374 |
+| 🔥 Total Contributions (Past Year) | 8,378 |
 | 📚 Total Repositories | 137 |
 | ⭐ Total Stars | 47 |
 | 🍴 Total Forks | 5 |
-| 💻 Total Commits | 4367 |
-| 🔄 Pull Requests | 3868 |
-| 🐛 Issues Created | 43 |
+| 💻 Total Commits | 8300 |
+| 🔄 Pull Requests | 53 |
+| 🐛 Issues Created | 4 |
 
 ### 🏆 Top Languages
 ```text
 Python       ████████░░░░░░░░░░░░  43.71%
 HTML         ████░░░░░░░░░░░░░░░░  22.81%
-TypeScript   ████░░░░░░░░░░░░░░░░  21.18%
+TypeScript   ████░░░░░░░░░░░░░░░░  21.19%
 JavaScript   █░░░░░░░░░░░░░░░░░░░   6.11%
 Go           ░░░░░░░░░░░░░░░░░░░░   1.23%
 ```
@@ -152,7 +152,7 @@ Go           ░░░░░░░░░░░░░░░░░░░░   1.23
 | **Mo Interiors KE**<br/><sub>Immersive 3D Interior Design Webstore</sub> | 🌐 [**Live**](https://mointeriorske.com)<br/>`🔒 Private` | Next.js 16 webstore transforming social catalog media via AI ingestion into 3D-visualizable spatial products (Three.js/R3F) on a `moi_` multi-tenant Appwrite backend. | `TypeScript` `Next.js 16` `Three.js` `Appwrite`<br/>*(Updated Sep 2026)* |
 | **Promethean MEP Works**<br/><sub>B2B MEP Engineering Corporate Portal</sub> | 🌐 [**Live**](https://promethean-beta.appwrite.network)<br/>`🔒 Private` | Enterprise engineering portal for East Africa's MEP contractor (since 1953) featuring Next.js 16 RSC, Three.js/R3F postprocessing scenes, and custom CSS design tokens. | `TypeScript` `Next.js 16` `Three.js` `Framer Motion`<br/>*(Updated Jun 2026)* |
 | **Casa Gamma**<br/><sub>Luxury Hospitality Sanctuary Monorepo</sub> | 🌐 [**Live**](https://www.casagammaliving.com)<br/>`🔒 Private` | Monorepo pairing `public-site` (Next.js 16 + MapLibre/Deck.gl + Three.js) with `admin-dashboard` (Clerk) and 4 Appwrite serverless functions for identity sync & FCM alerts. | `TypeScript` `Next.js 16` `Clerk` `Appwrite`<br/>*(Updated Oct 2026)* |
-| **Northern Vision CBO (NVCBO)**<br/><sub>Community Development & Portal</sub> | 🌐 [**Live**](https://northernvisionke.org)<br/>📦 [**Source**](https://github.com/vrxmike/nvcbo-landing-page)<br/>`🌐 Public` | Official web portal and community hub for Northern Vision CBO, featuring impact reporting hubs and automated newsletter delivery (`nvcbo-newsletter`). | `HTML5` `TypeScript` `Tailwind CSS`<br/>*(Updated Sep 2026)* |
+| **Northern Vision CBO (NVCBO)**<br/><sub>Community Development & Portal</sub> | 🌐 [**Live**](https://northernvisionke.org)<br/>📖 [**Wiki**](https://github.com/vrxmike/nvcbo-landing-page/wiki)<br/>`🌐 Public` | Official web portal and community hub for Northern Vision CBO, featuring impact reporting hubs, automated newsletter delivery (`nvcbo-newsletter`), and full project documentation in the repository Wiki. | `HTML5` `TypeScript` `Tailwind CSS`<br/>*(Updated Nov 2026)* |
 | **Alvin Mike Portfolio**<br/><sub>Personal Portfolio & Interactive Identity Hub</sub> | 🌐 [**Live**](https://alvinmike.tech)<br/>`🔒 Private` | Official portfolio website (`apps/portfolio`), architected with Next.js 16, React 19, Three.js 3D canvas, Radix UI command palette (`CMD+K`), and Appwrite Cloud edge delivery. | `TypeScript` `Next.js 16` `Three.js` `Appwrite`<br/>*(Updated Nov 2026)* |
 <!-- END_PROJECTS -->
 
