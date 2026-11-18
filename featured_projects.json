@@ -109,5 +109,31 @@
     "gist_url": null,
     "highlights": "Official portfolio website (`apps/portfolio`), architected with Next.js 16, React 19, Three.js 3D canvas, Radix UI command palette (`CMD+K`), and Appwrite Cloud edge delivery.",
     "stack": ["TypeScript", "Next.js 16", "Three.js", "Appwrite"]
+  },
+  {
+    "id": "restinlovestevenmike",
+    "repo": "vrxmike/RESTINLOVESTEVENMIKE",
+    "name": "Steven O. Mike — In Loving Memory",
+    "badge": "A Legacy of Light · Memorial & Eulogy",
+    "status": "building",
+    "stage": "🚧 Building",
+    "live_url": "https://restinlovestevenmike.life",
+    "gist_id": "2430a6b68275cd7106b896c1b7109878",
+    "gist_url": "https://gist.github.com/vrxmike/2430a6b68275cd7106b896c1b7109878",
+    "highlights": "A personal memorial and eulogy tribute honoring my younger brother, Steven O. Mike, paired with an isolated `/shp` Next.js 16 App Router TypeScript tribute shop.",
+    "stack": ["HTML5", "Tailwind CSS", "Next.js 16", "TypeScript"]
+  },
+  {
+    "id": "raj",
+    "repo": "vrxmike/raj",
+    "name": "Trinity (Raj)",
+    "badge": "3D Spatial & Geospatial Interactive SPA",
+    "status": "building",
+    "stage": "🚧 Building",
+    "live_url": "https://trinity.appwrite.network",
+    "gist_id": "66eac17acf96ad1309ac96bd96dec0db",
+    "gist_url": "https://gist.github.com/vrxmike/66eac17acf96ad1309ac96bd96dec0db",
+    "highlights": "Cinematic interactive SPA featuring a Three.js 3D spatial engine, GSAP motion transitions, Leaflet/Turf.js geospatial views, and Appwrite Sites deployment.",
+    "stack": ["HTML5", "Three.js", "GSAP", "Leaflet", "Appwrite"]
   }
 ]

@@ -356,8 +356,8 @@ def generate_contribution_svg(calendar_data: dict) -> str:
     svg_content = "\n  ".join(rects)
     return f"{svg_header}\n  {label}\n  {svg_content}\n</svg>"
 
-def render_featured_projects(user_data: dict) -> str:
-    """Render the featured projects table from featured_projects.json and live repo nodes."""
+def render_featured_projects(user_data: dict, status_filter: str = "production") -> str:
+    """Render a projects table from featured_projects.json and live repo nodes filtered by status."""
     if not os.path.exists(FEATURED_PROJECTS_PATH):
         logger.warning(f"Featured projects config not found at {FEATURED_PROJECTS_PATH}")
         return ""
@@ -369,6 +369,10 @@ def render_featured_projects(user_data: dict) -> str:
         logger.error(f"Failed to read {FEATURED_PROJECTS_PATH}: {e}")
         return ""
 
+    filtered_projects = [p for p in projects if p.get("status", "production") == status_filter]
+    if not filtered_projects:
+        return ""
+
     # Map repo nodes by nameWithOwner
     repos_by_name = {}
     for node in user_data.get("repositories", {}).get("nodes", []):
@@ -376,15 +380,22 @@ def render_featured_projects(user_data: dict) -> str:
         if name:
             repos_by_name[name] = node
 
-    lines = [
-        "| System / Platform | Scope & Access | Architecture & Engineering Highlights | Stack & Activity |",
-        "| :--- | :--- | :--- | :--- |"
-    ]
+    if status_filter == "building":
+        lines = [
+            "| Project | Scope & Stage | Architecture & Current Focus | Stack & Activity |",
+            "| :--- | :--- | :--- | :--- |"
+        ]
+    else:
+        lines = [
+            "| System / Platform | Scope & Access | Architecture & Engineering Highlights | Stack & Activity |",
+            "| :--- | :--- | :--- | :--- |"
+        ]
 
-    for p in projects:
+    for p in filtered_projects:
         name = p.get("name", "")
         badge = p.get("badge", "")
         repo_name = p.get("repo", "")
+        stage = p.get("stage")
         live_url = p.get("live_url")
         wiki_url = p.get("wiki_url")
         gist_url = p.get("gist_url")
@@ -411,6 +422,8 @@ def render_featured_projects(user_data: dict) -> str:
             access_parts.append(f"📦 [**Source**](https://github.com/{repo_name})")
         if gist_url:
             access_parts.append(f"📐 [**Blueprint**]({gist_url})")
+        if stage:
+            access_parts.append(f"`{stage}`")
 
         vis_tag = "`🔒 Private`" if is_private else "`🌐 Public`"
         access_parts.append(vis_tag)
@@ -437,8 +450,8 @@ def render_featured_projects(user_data: dict) -> str:
 
     return "\n".join(lines) + "\n"
 
-def inject_readme(stats_content: str, projects_content: str = "") -> None:
-    """Inject rendered stats and featured projects markdown into the README.md file."""
+def inject_readme(stats_content: str, projects_content: str = "", building_content: str = "") -> None:
+    """Inject rendered stats, featured projects, and currently building markdown into README.md."""
     logger.info(f"Injecting content into {README_PATH}")
 
     try:
@@ -451,6 +464,14 @@ def inject_readme(stats_content: str, projects_content: str = "") -> None:
             readme_text = stats_pattern.sub(lambda m: f"{m.group(1)}\n{stats_content}{m.group(2)}", readme_text)
         else:
             logger.warning("Could not find <!-- START_STATS --> and <!-- END_STATS --> markers in README.md")
+
+        # Inject Currently Building
+        if building_content:
+            building_pattern = re.compile(r"(<!-- START_BUILDING -->).*?(<!-- END_BUILDING -->)", re.DOTALL)
+            if building_pattern.search(readme_text):
+                readme_text = building_pattern.sub(lambda m: f"{m.group(1)}\n{building_content}{m.group(2)}", readme_text)
+            else:
+                logger.warning("Could not find <!-- START_BUILDING --> and <!-- END_BUILDING --> markers in README.md")
 
         # Inject Projects
         if projects_content:
@@ -488,8 +509,9 @@ def main():
         logger.info("Successfully saved activity.svg")
 
     markdown_stats = render_markdown(stats)
-    markdown_projects = render_featured_projects(data)
-    inject_readme(markdown_stats, markdown_projects)
+    markdown_projects = render_featured_projects(data, "production")
+    markdown_building = render_featured_projects(data, "building")
+    inject_readme(markdown_stats, markdown_projects, markdown_building)
 
 if __name__ == "__main__":
     main()

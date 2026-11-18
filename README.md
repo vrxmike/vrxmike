@@ -132,6 +132,14 @@ Go           ░░░░░░░░░░░░░░░░░░░░   1.23
 ### 🛡️ Engineering Insights
 ![Metrics](./github-metrics.svg)
 
+### 🚧 Currently Building
+<!-- START_BUILDING -->
+| Project | Scope & Stage | Architecture & Current Focus | Stack & Activity |
+| :--- | :--- | :--- | :--- |
+| **Steven O. Mike — In Loving Memory**<br/><sub>A Legacy of Light · Memorial & Eulogy</sub> | 🌐 [**Live**](https://restinlovestevenmike.life)<br/>📐 [**Blueprint**](https://gist.github.com/vrxmike/2430a6b68275cd7106b896c1b7109878)<br/>`🚧 Building`<br/>`🔒 Private` | A personal memorial and eulogy tribute honoring my younger brother, Steven O. Mike, paired with an isolated `/shp` Next.js 16 App Router TypeScript tribute shop. | `HTML5` `Tailwind CSS` `Next.js 16` `TypeScript`<br/>*(Updated Oct 2026)* |
+| **Trinity (Raj)**<br/><sub>3D Spatial & Geospatial Interactive SPA</sub> | 🌐 [**Live**](https://trinity.appwrite.network)<br/>📐 [**Blueprint**](https://gist.github.com/vrxmike/66eac17acf96ad1309ac96bd96dec0db)<br/>`🚧 Building`<br/>`🔒 Private` | Cinematic interactive SPA featuring a Three.js 3D spatial engine, GSAP motion transitions, Leaflet/Turf.js geospatial views, and Appwrite Sites deployment. | `HTML5` `Three.js` `GSAP` `Leaflet` `Appwrite`<br/>*(Updated May 2026)* |
+<!-- END_BUILDING -->
+
 ### 🚀 Featured Production Systems & Deployed Works
 
 > [!TIP]
