@@ -109,24 +109,24 @@ Building scalable, secure, cloud-native applications — from low-level systems 
 <!-- START_STATS -->
 | Metric | Count |
 | :--- | :--- |
-| 🔥 Total Contributions (Past Year) | 8,420 |
+| 🔥 Total Contributions (Past Year) | 8,428 |
 | 📚 Total Repositories | 138 |
 | ⭐ Total Stars | 47 |
 | 🍴 Total Forks | 5 |
-| 💻 Total Commits | 4411 |
-| 🔄 Pull Requests | 3869 |
+| 💻 Total Commits | 4418 |
+| 🔄 Pull Requests | 3870 |
 | 🐛 Issues Created | 43 |
 
 ### 🏆 Top Languages
 ```text
-Python       ████████░░░░░░░░░░░░  43.83%
-HTML         ████░░░░░░░░░░░░░░░░  22.41%
-TypeScript   ████░░░░░░░░░░░░░░░░  21.38%
-JavaScript   █░░░░░░░░░░░░░░░░░░░   6.16%
+Python       ████████░░░░░░░░░░░░  43.81%
+HTML         ████░░░░░░░░░░░░░░░░  22.40%
+TypeScript   ████░░░░░░░░░░░░░░░░  21.41%
+JavaScript   █░░░░░░░░░░░░░░░░░░░   6.17%
 Go           ░░░░░░░░░░░░░░░░░░░░   1.23%
 ```
 
-*(Last updated: November 18, 2026 (inc. private))*
+*(Last updated: November 19, 2026 (inc. private))*
 <!-- END_STATS -->
 
 ### 🛡️ Engineering Insights
@@ -136,7 +136,7 @@ Go           ░░░░░░░░░░░░░░░░░░░░   1.23
 <!-- START_BUILDING -->
 | Project | Scope & Stage | Architecture & Current Focus | Stack & Activity |
 | :--- | :--- | :--- | :--- |
-| **Steven O. Mike — In Loving Memory**<br/><sub>A Legacy of Light · Memorial & Eulogy</sub> | 🌐 [**Live**](https://restinlovestevenmike.life)<br/>📐 [**Blueprint**](https://gist.github.com/vrxmike/2430a6b68275cd7106b896c1b7109878)<br/>`🚧 Building`<br/>`🔒 Private` | A personal memorial and eulogy tribute honoring my younger brother, Steven O. Mike, paired with an isolated `/shp` Next.js 16 App Router TypeScript tribute shop. | `HTML5` `Tailwind CSS` `Next.js 16` `TypeScript`<br/>*(Updated Oct 2026)* |
+| **Steven O. Mike — In Loving Memory**<br/><sub>A Legacy of Light · Memorial & Eulogy</sub> | 🌐 [**Live**](https://restinlovestevenmike.life)<br/>📐 [**Blueprint**](https://gist.github.com/vrxmike/2430a6b68275cd7106b896c1b7109878)<br/>`🚧 Building`<br/>`🔒 Private` | A personal memorial and eulogy tribute honoring my younger brother, Steven O. Mike, paired with an isolated `/shp` Next.js 16 App Router TypeScript tribute shop. | `HTML5` `Tailwind CSS` `Next.js 16` `TypeScript`<br/>*(Updated Nov 2026)* |
 | **Trinity (Raj)**<br/><sub>3D Spatial & Geospatial Interactive SPA</sub> | 🌐 [**Live**](https://trinity.appwrite.network)<br/>📐 [**Blueprint**](https://gist.github.com/vrxmike/66eac17acf96ad1309ac96bd96dec0db)<br/>`🚧 Building`<br/>`🔒 Private` | Cinematic interactive SPA featuring a Three.js 3D spatial engine, GSAP motion transitions, Leaflet/Turf.js geospatial views, and Appwrite Sites deployment. | `HTML5` `Three.js` `GSAP` `Leaflet` `Appwrite`<br/>*(Updated May 2026)* |
 <!-- END_BUILDING -->
 
