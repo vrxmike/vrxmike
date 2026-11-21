@@ -22,39 +22,6 @@
     "stack": ["TypeScript", "Next.js", "Appwrite", "Python"]
   },
   {
-    "id": "ai-interview-generator",
-    "repo": "vrxmike/AI-interview-generator",
-    "name": "AI Interview Generator",
-    "badge": "Serverless Technical Screen Engine",
-    "live_url": "https://ai-interview-generator.appwrite.network",
-    "gist_id": null,
-    "gist_url": null,
-    "highlights": "Serverless Next.js 16 + Appwrite Cloud Function orchestrating Google Gemini & GitHub Models (`GPT-4o-mini`) with zero client-side token exposure and prompt-injection guards.",
-    "stack": ["TypeScript", "Next.js 16", "Gemini API", "Appwrite"]
-  },
-  {
-    "id": "blessedhands",
-    "repo": "vrxmike/blessedhands.ai",
-    "name": "BlessedHands AI",
-    "badge": "WebGPU AR Beauty & Virtual Try-On",
-    "live_url": "https://blessedhands-beta.appwrite.network/",
-    "gist_id": null,
-    "gist_url": null,
-    "highlights": "Luxury beauty & styling platform merging real-time MediaPipe facial landmark tracking and Three.js/R3F virtual try-on with Appwrite booking & Zustand checkout.",
-    "stack": ["TypeScript", "MediaPipe", "Three.js", "Appwrite"]
-  },
-  {
-    "id": "bytesfang",
-    "repo": "vrxmike/bytesfang",
-    "name": "BytesFang Technologies Monorepo",
-    "badge": "Portfolio & Experimental Labs Workspace",
-    "live_url": null,
-    "gist_id": null,
-    "gist_url": null,
-    "highlights": "pnpm workspaces monorepo hosting `apps/portfolio` (`alvinmike.tech`) and `apps/labs` (`labs.alvinmike.tech`) built with Next.js 16, Three.js WebGL, Framer Motion & Appwrite Sites.",
-    "stack": ["TypeScript", "Next.js 16", "Three.js", "Appwrite"]
-  },
-  {
     "id": "mohinteriors",
     "repo": "vrxmike/mohinteriors",
     "name": "Mo Interiors KE",
@@ -111,6 +78,39 @@
     "stack": ["TypeScript", "Next.js 16", "Three.js", "Appwrite"]
   },
   {
+    "id": "ai-interview-generator",
+    "repo": "vrxmike/AI-interview-generator",
+    "name": "AI Interview Generator",
+    "badge": "Serverless Technical Screen Engine",
+    "live_url": "https://ai-interview-generator.appwrite.network",
+    "gist_id": null,
+    "gist_url": null,
+    "highlights": "Serverless Next.js 16 + Appwrite Cloud Function orchestrating Google Gemini & GitHub Models (`GPT-4o-mini`) with zero client-side token exposure and prompt-injection guards.",
+    "stack": ["TypeScript", "Next.js 16", "Gemini API", "Appwrite"]
+  },
+  {
+    "id": "blessedhands",
+    "repo": "vrxmike/blessedhands.ai",
+    "name": "BlessedHands AI",
+    "badge": "WebGPU AR Beauty & Virtual Try-On",
+    "live_url": "https://blessedhands-beta.appwrite.network/",
+    "gist_id": null,
+    "gist_url": null,
+    "highlights": "Luxury beauty & styling platform merging real-time MediaPipe facial landmark tracking and Three.js/R3F virtual try-on with Appwrite booking & Zustand checkout.",
+    "stack": ["TypeScript", "MediaPipe", "Three.js", "Appwrite"]
+  },
+  {
+    "id": "bytesfang",
+    "repo": "vrxmike/bytesfang",
+    "name": "BytesFang Technologies Monorepo",
+    "badge": "Portfolio & Experimental Labs Workspace",
+    "live_url": null,
+    "gist_id": null,
+    "gist_url": null,
+    "highlights": "pnpm workspaces monorepo hosting `apps/portfolio` (`alvinmike.tech`) and `apps/labs` (`labs.alvinmike.tech`) built with Next.js 16, Three.js WebGL, Framer Motion & Appwrite Sites.",
+    "stack": ["TypeScript", "Next.js 16", "Three.js", "Appwrite"]
+  },
+  {
     "id": "restinlovestevenmike",
     "repo": "vrxmike/RESTINLOVESTEVENMIKE",
     "name": "Steven O. Mike — In Loving Memory",
@@ -120,7 +120,7 @@
     "live_url": "https://restinlovestevenmike.life",
     "gist_id": "2430a6b68275cd7106b896c1b7109878",
     "gist_url": "https://gist.github.com/vrxmike/2430a6b68275cd7106b896c1b7109878",
-    "highlights": "A personal memorial and eulogy tribute honoring my younger brother, Steven O. Mike, paired with an isolated `/shp` Next.js 16 App Router TypeScript tribute shop.",
+    "highlights": "A personal memorial and eulogy tribute honoring my Late younger brother, Steven O. Mike, paired with an isolated `/shp` Next.js 16 App Router TypeScript tribute shop.",
     "stack": ["HTML5", "Tailwind CSS", "Next.js 16", "TypeScript"]
   },
   {
